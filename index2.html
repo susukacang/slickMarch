@@ -87,6 +87,14 @@
     </div>
   </section>
 
+
+  <div class="slick-controls">
+    <!-- <button class="next">Next</button>
+    <button class="prev">Previous</button> -->
+    <!-- <button class="slick-next next"></button> -->
+    <div class="prev pull-left"><i class='fa fa-angle-left' aria-hidden='true'></i></div>
+    <div class="next pull-right"><i class='fa fa-angle-right' aria-hidden='true'></i></div>
+  </div>
   <section class="vertical-center-3 slider">
     <div>
       <img src="http://placehold.it/350x100?text=1">
@@ -118,12 +126,12 @@
     <div>
       <img src="http://placehold.it/350x100?text=10">
     </div>
-    <ul>
-      <li class="prev"></li>
-      <li class="next"></li>
-  </ul>
   </section>
-
+ 
+  <!-- <div class="slick-controls">
+		<button class="next2">Next</button>
+		<button class="prev2">Previous</button>
+	</div> -->
   <section class="vertical-center-2 slider">
     <div>
       <img src="http://placehold.it/350x100?text=1">
@@ -156,6 +164,9 @@
       <img src="http://placehold.it/350x100?text=10">
     </div>
   </section>
+  <div class="arrow-container-2">
+    <div class="arrows"></div>
+  </div>
 
   <section class="vertical-center slider">
     <div>
@@ -189,6 +200,11 @@
       <img src="http://placehold.it/350x100?text=10">
     </div>
   </section>
+  <div class="arrow-container-1">  
+    <p class="left">left</p>
+    <p class="right">right</p>
+  </div>
+
 
   <section class="vertical slider">
     <div>
@@ -333,19 +349,75 @@
         content:  "\f0da";
         font-size: 22px;        
     } 
-    .prev .slick-prev::before {
+    .prev {
         font-family: FontAwesome;
         content: "\f0d9";
         font-size: 22px;
     }  
-    .next .slick-next::before {
+    .next {
         font-family: FontAwesome;
         content:  "\f0da";
         font-size: 22px;        
     } 
+    .prev2 {
+        font-family: FontAwesome;
+        content: "\f0d9";
+        font-size: 22px;
+    }  
+    .next2 {
+        font-family: FontAwesome;
+        content:  "\f0da";
+        font-size: 22px;        
+    } 
+    .slick-prev {
+        font-family: FontAwesome;
+        content: "\f0d9";
+        font-size: 22px;
+    }  
+    .slick-next {
+        font-family: FontAwesome;
+        content:  "\f0da";
+        font-size: 22px;        
+    } 
+    .slick-next2, .slick-prev2 {
+      display: inline-block;
+      width: 38px;
+      height: 38px;
+      margin-top: 6px;
+      background: #2b2b2b;
+      color: #FFF;
+      margin-left: 5px;
+      cursor: pointer;
+      font: 18px/36px FontAwesome;
+      text-align: center;
+      transition: all 0.5s;
+    }
+
+    .slick-next2:hover, .slick-prev2:hover {
+      background: #33687a;
+    }
+
+    .slick-next2:before {
+      content: '\f105'
+    }
+
+    .slick-prev2:before {
+      content: '\f104'
+    }
+    .arrow-container-2{
+      font: 20px/50px NeoSansR;
+      color: #222;
+      height: 52px;
+      over-flow: hidden;
+      border-bottom: 1px solid rgba(0,0,0,.25);
+    }
+    .arrows {
+      float: right;
+    }
   </style>
   <script type="text/javascript">
     $(function() {
+      // using custom arrows by string
       $(".vertical-center-4").slick({
         dots: true,
         vertical: true,
@@ -356,6 +428,12 @@
         prevArrow:"<button type='button' class='slick-prev'></button>",
         nextArrow:"<button type='button' class='slick-next'></button>"
       });
+
+      // var $prev=$('.prev');
+      // var $next=$('.next');
+      // $('.prev').innerHTML('<div><i class="fa fa-angle-left" aria-hidden="true"></i></div>');
+      // $('.next').innerHTML('<div><i class="fa fa-angle-right" aria-hidden="true"></i></div>');
+      // using custom arrows by DOM object
       $(".vertical-center-3").slick({
         dots: true,
         vertical: true,
@@ -365,18 +443,32 @@
         prevArrow: $('.prev'),
         nextArrow: $('.next')
       });
+      // using appendArrows
       $(".vertical-center-2").slick({
         dots: true,
         vertical: true,
         centerMode: true,
         slidesToShow: 2,
-        slidesToScroll: 2
+        slidesToScroll: 2,
+        appendArrows: $('.arrows'),
+        prevArrow:'<span class="slick-prev2"></span>',
+        nextArrow:'<span class="slick-next2"></span>',
       });
       $(".vertical-center").slick({
         dots: true,
         vertical: true,
         centerMode: true,
+        arrows: false,
       });
+      // Using slick method
+      $(".left").click(function(){
+        $('.vertical-center').slick('slickPrev');
+      })
+      $(".right").click(function(){
+        $('.vertical-center').slick('slickNext');
+      })
+
+
       $(".vertical").slick({
         dots: true,
         vertical: true,
