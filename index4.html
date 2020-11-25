@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slick Playground I</title>
+  <meta charset="UTF-8">
+  <!-- <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"> -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <style type="text/css">
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .slider {
+        width: 100%;
+        margin: 100px auto;
+    }
+
+    /* .vertical-slider {
+        width: 100%;
+        margin: 100px auto;
+    } */
+
+    .slick-slide {
+      margin: 0px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    }
+
+
+    .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: .2;
+    }
+    
+    .slick-active {
+      opacity: .5;
+    }
+
+    .slick-current {
+      opacity: 1;
+    }
+
+    .slick-slide img {
+        padding: 0 0px;
+        margin: 10px auto;
+        /* margin-top: -5px; */
+    }
+
+    .slick-list {
+        margin: 0 0em;
+    }
+
+</style>
+
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: 100px 50px 50px auto;
+        grid-template-rows: auto;
+        gap: 0px;
+        grid-template-areas: "dummy thumbnails show";
+        border: 1px solid red;
+        /* background-color: #2196F3; */
+        height: 500px;
+    }
+    .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 0px;
+        font-size: 30px;
+        text-align: center;
+    }
+    .thumbnails {
+        border: 1px solid blue;
+    }
+
+    .show {
+        border: 1px solid green;
+    }
+
+  </style>
+    <style>
+        .thumbnails .slick-slide {
+          opacity: 0.5;
+        }
+  
+        .thumbnails .slick-slide.slick-active {
+          opacity: 1;
+          background: green;
+        }
+      </style>
+    <style>
+        .slick-next2, .slick-prev2 {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        margin-top: 0px;
+        background: #2b2b2b;
+        color: #FFF;
+        margin-left: 0px;
+        cursor: pointer;
+        font: 18px/36px FontAwesome;
+        text-align: center;
+        transition: all 0.5s;
+        }
+
+        .slick-next2:hover, .slick-prev2:hover {
+        background: #33687a;
+        }
+
+        .slick-next2:before {
+        content: '\f107'
+        }
+
+        .slick-prev2:before {
+        content: '\f106'
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="grid-container">
+        <div class="dummy">dummy</div>
+        <div class="thumbnails slider">
+            <div class="slick-prev2"></div>
+
+            <section class="vertical-center-thumbnail">
+                <div>
+                    <img src="https://via.placeholder.com/50?text=1">
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/50?text=2">
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/50?text=3">
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/50?text=4">
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/50?text=5">
+                </div>
+            </section>
+            <div class="slick-next2"></div>
+        </div>
+        <div class="show slider">
+            <section class="vertical-center-main">
+                <div>
+                    <img src="https://via.placeholder.com/300?text=1">
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/300?text=2">
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/300?text=3">
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/300?text=4">
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/300?text=5">
+                </div>
+            </section>
+        </div>
+    </div>
+ 
+  <!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous"></script>
+
+
+ 
+  <script type="text/javascript">
+    $(function() {
+
+      // using appendArrows
+      $(".vertical-center-thumbnail").slick({
+        dots: false,
+        vertical: true,
+        centerMode: true,
+        centerPadding: '50px',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: $('.slick-prev2'),
+        nextArrow: $('.slick-next2'),
+        focusOnSelect: true,
+        asNavFor: ".vertical-center-main"
+      });
+
+
+            // using appendArrows
+      $(".vertical-center-main").slick({
+        dots: false,
+        vertical: true,
+        centerMode: true,
+        centerPadding: '50px',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: ".vertical-center-thumbnail"
+      });
+
+        // Remove active class from all thumbnail slides
+        $(".thumbnails .slick-slide").removeClass("slick-active");
+
+        // Set active class to first thumbnail slides
+        $(".thumbnails .slick-slide").eq(0).addClass("slick-active");
+
+        // On before slide change match active thumbnail to current slide
+        $(".show").on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+            var mySlideNumber = nextSlide;
+            $(".thumbnails .slick-slide").removeClass("slick-active");
+            $(".thumbnails .slick-slide").eq(mySlideNumber).addClass("slick-active");
+        });
+
+    });
+</script>
+
+</body>
+</html>

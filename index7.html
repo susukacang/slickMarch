@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="scripts/magnifier.css">
+    <link rel="stylesheet" type="text/css" href="scripts/demo.css">
+    <link rel="stylesheet" type="text/css" href="scripts/gallery.css">
+
+    <style>
+        .img {
+            display: block;
+            float: left;
+        }
+        .mygallery {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div>
+        <a class="magnifier-thumb-wrapper" href="http://en.wikipedia.org/wiki/File:Starry_Night_Over_the_Rhone.jpg">
+            <img id="thumb" src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Starry_Night_Over_the_Rhone.jpg/200px-Starry_Night_Over_the_Rhone.jpg"
+            data-large-img-url="http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Starry_Night_Over_the_Rhone.jpg/400px-Starry_Night_Over_the_Rhone.jpg"
+            data-large-img-wrapper="preview">
+        </a>
+        <div class="magnifier-preview" id="preview" style="width: 200px; height: 133px">Starry Night Over The Rhone<br>by Vincent van Gogh</div>
+    </div> -->
+
+    <div>
+        <div class="mygallery">
+            <div class="magnifier-thumb-wrapper demo"><img class="img" src="https://via.placeholder.com/200?text=1" data-large-img-url="https://via.placeholder.com/400?text=1"></div>
+            <div class="magnifier-thumb-wrapper demo"><img class="img" src="https://via.placeholder.com/200?text=2" data-large-img-url="https://via.placeholder.com/400?text=2"></div>
+            <div class="magnifier-thumb-wrapper demo"><img class="img" src="https://via.placeholder.com/200?text=3" data-large-img-url="https://via.placeholder.com/400?text=3"></div>
+        </div>
+            <div class="magnifier-preview" id="preview" style="width: 200px; height: 200px">Starry Night Over The Rhone<br>by Vincent van Gogh</div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="scripts/Event.js"></script>
+    <script type="text/javascript" src="scripts/Magnifier.js"></script>
+    <script type="text/javascript">
+        var evt = new Event(),
+            m = new Magnifier(evt);
+    </script>
+    <script>
+        $(function(){
+            // m.attach({thumb: '#thumb'});
+
+            m.attach({
+                thumb: '.img',
+                largeWrapper: 'preview'
+            });
+
+        })
+    </script>
+</body>
+</html>

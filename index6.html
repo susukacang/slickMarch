@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slick Playground I</title>
+  <meta charset="UTF-8">
+  <!-- <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"> -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" integrity="sha512-WEQNv9d3+sqyHjrqUZobDhFARZDko2wpWdfcpv44lsypsSuMO0kHGd3MQ8rrsBn/Qa39VojphdU6CMkpJUmDVw==" crossorigin="anonymous" />
+
+
+  <link rel="stylesheet" type="text/css" href="scripts/demo.css">
+  <link rel="stylesheet" type="text/css" href="scripts/gallery.css">
+  <link rel="stylesheet" type="text/css" href="scripts/magnifier.css">
+  <link rel="stylesheet" type="text/css" href="scripts/demo.css">
+
+  <style type="text/css">
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .slider {
+        /* width: 100%;
+        margin: 100px auto; */
+    }
+
+    /* .vertical-slider {
+        width: 100%;
+        margin: 100px auto;
+    } */
+
+    .slick-slide {
+      margin: 0px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    /* .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    } */
+
+
+    .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: .2;
+    }
+    
+    .slick-active {
+      opacity: .5;
+    }
+
+    .slick-current {
+      opacity: 1;
+    }
+
+    .slick-slide img {
+        padding: 0 0px;
+        margin: 10px auto;
+        /* margin-top: -5px; */
+    }
+
+    .slick-list {
+        margin: 0 0em;
+    }
+
+</style>
+<style>
+    .popup-container {
+        display: grid;
+        grid-template-columns: 400px auto;
+        grid-template-rows: auto;
+        gap: 4px;
+        grid-template-areas: "popup-main popup-thumbnails";
+        border: 1px solid red;
+        /* background-color: #2196F3; */
+        height: 500px;
+        /* justify-items: center; */
+        /* align-items: center; */
+    }
+
+    .popup-main {
+        grid-area: popup-main;
+        background-color: rgb(250, 228, 250);
+        margin: 0px 2px;
+    }
+    /* .popup-thumbnails {
+        grid-area: popup-thumbnails2;
+        background-color: rgb(250, 228, 250);
+        margin: 0px 2px;
+    } */
+
+    .popup-thumbnail-container {
+      /* grid-area: popup-thumbnails; */
+      display: grid;
+      grid-auto-columns: 50px;
+      grid-auto-rows: 50px;
+      grid-gap: 10px;
+      background-color: #2196F3;
+      padding: 50px;
+    }
+
+/* .popup-thumbnail1 > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 0px 0;
+  font-size: 30px;
+} */
+    .item1 { grid-area: 1 / 1 / 2 / 2; }
+    .item2 { grid-area: 1 / 2 / 2 / 3; }
+    .item3 { grid-area: 1 / 3 / 2 / 4; }
+    .item4 { grid-area: 1 / 4 / 2 / 5; }
+    .item5 { grid-area: 1 / 5 / 2 / 6; }
+    .item6 { grid-area: 2 / 1 / 3 / 2; }
+    .item7 { grid-area: 2 / 2 / 3 / 3; }
+    .item8 { grid-area: 2 / 3 / 3 / 4; }
+    .item9 { grid-area: 2 / 4 / 3 / 5; }
+    .item10 { grid-area: 2 / 5 / 3 / 6; }
+</style>
+<style>
+  .grid-container {
+      display: grid;
+      grid-template-columns: 100px 100px 400px auto;
+      grid-template-rows: auto;
+      gap: 4px;
+      grid-template-areas: "dummy thumbnails1 thumbnails2 show magnifier";
+      border: 1px solid red;
+      /* background-color: #2196F3; */
+      height: 500px;
+      /* justify-items: center; */
+      /* align-items: center; */
+  }
+
+  .thumbnails1, .thumbnails2 {
+      border: 1px solid blue;
+  }
+
+  .show {
+      border: 1px solid green;
+  }
+
+  .dummy {
+      grid-area: dummy;
+      background-color: lightgreen;
+  }
+
+  .thumbnails1 {
+      grid-area: thumbnails1;
+      background-color: rgb(250, 228, 250);
+      margin: 0px 2px;
+  }
+
+  .thumbnails2 {
+      grid-area: thumbnails2;
+      background-color: rgb(238, 168, 238);
+  }
+
+  .magnifier {
+      grid-area: magnifier;
+      background-color: rgb(186, 247, 247);
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 200px; */
+    border: 3px solid green;
+    margin: 100px auto;
+  }
+
+</style>
+<style>
+    .thumbnails1 .slick-slide, .thumbnails2 .slick-slide {
+      opacity: 0.5;
+    }
+
+    .thumbnails1 .slick-slide.slick-active, .thumbnails2 .slick-slide.slick-active {
+      opacity: 1;
+      background: green;
+    }
+    .thumbnails1 .slick-slide.slick-current.slick-active {
+      opacity: 1;
+      border: 5px solid rgb(128, 0, 64);
+    }
+</style>
+<style>
+    .slick-next1, .slick-prev1, .slick-next2, .slick-prev2 {
+      /* display: inline-block; */
+      width: 100%;
+      height: 50px;
+      margin-top: 0px;
+      background: #2b2b2b;
+      color: #FFF;
+      margin-left: 0px;
+      cursor: pointer;
+      font: 18px/36px FontAwesome;
+      text-align: center;
+      transition: all 0.5s;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* justify-items: center;  */
+      /* margin: auto; */
+      border: 3px solid green; 
+      /* text-align: center; */
+    }
+
+    .slick-next1:hover, .slick-prev1:hover, .slick-next2:hover, .slick-prev2:hover {
+      background: #33687a;
+    }
+
+    .slick-next1:before , .slick-next2:before {
+      content: '\f107'
+    }
+
+    .slick-prev1:before, .slick-prev2:before {
+      content: '\f106'
+    }
+
+</style>
+
+<style>
+  .magnifier-preview {
+      float: left;
+      width: 250px;
+      border: solid 1px #aaa;
+      border-left: 0;
+      text-align: center;
+      display: inline-block;
+      vertical-align: middle;
+
+      border: 1px solid rgb(255, 0, 200); width: 400px; height: 400px
+  }
+</style>
+
+<style>
+  .magnifier-wrapper {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .magnifier-thumb-wrapper.demo {
+    float: left;
+    padding: 0;
+    margin: 0;
+    top: 1px
+}
+
+</style>
+
+</head>
+<body>
+    <div class="grid-container">
+        <div class="dummy">dummy</div>
+        <div class="thumbnails1">
+            <div class="slick-prev1"></div>
+            <section class="vertical-center-thumbnail1">
+                <div>
+                    <img src="https://via.placeholder.com/50?text=1">
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/50?text=2">
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/50?text=3">
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/50?text=4">
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/50?text=5">
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/50?text=6">
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/50?text=7">
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/50?text=8">
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/50?text=9">
+                </div>
+            </section>
+            <div class="slick-next1"></div>
+        </div>
+        <div class="thumbnails2">
+            <div class="slick-prev2"></div>
+            <section class="vertical-center-thumbnail2">
+              <div class="magnifier-thumb-wrapper demo"><a href="https://via.placeholder.com/800?text=1"><img class="img show-img" src="https://via.placeholder.com/400?text=1" data-large-img-url="https://via.placeholder.com/800?text=1"></a></div>
+              <div class="magnifier-thumb-wrapper demo"><a href="https://via.placeholder.com/800?text=2"><img class="img show-img" src="https://via.placeholder.com/400?text=2" data-large-img-url="https://via.placeholder.com/800?text=2"></a></div>
+              <div class="magnifier-thumb-wrapper demo"><a href="https://via.placeholder.com/800?text=3"><img class="img show-img" src="https://via.placeholder.com/400?text=3" data-large-img-url="https://via.placeholder.com/800?text=3"></a></div>
+              <div class="magnifier-thumb-wrapper demo"><a href="https://via.placeholder.com/800?text=4"><img class="img show-img" src="https://via.placeholder.com/400?text=4" data-large-img-url="https://via.placeholder.com/800?text=4"></a></div>
+              <div class="magnifier-thumb-wrapper demo"><a href="https://via.placeholder.com/800?text=5"><img class="img show-img" src="https://via.placeholder.com/400?text=5" data-large-img-url="https://via.placeholder.com/800?text=5"></a></div>
+              <div class="magnifier-thumb-wrapper demo"><a href="https://via.placeholder.com/800?text=6"><img class="img show-img" src="https://via.placeholder.com/400?text=6" data-large-img-url="https://via.placeholder.com/800?text=6"></a></div>
+              <div class="magnifier-thumb-wrapper demo"><a href="https://via.placeholder.com/800?text=7"><img class="img show-img" src="https://via.placeholder.com/400?text=7" data-large-img-url="https://via.placeholder.com/800?text=7"></a></div>
+              <div class="magnifier-thumb-wrapper demo"><a href="https://via.placeholder.com/800?text=8"><img class="img show-img" src="https://via.placeholder.com/400?text=8" data-large-img-url="https://via.placeholder.com/800?text=8"></a></div>
+              <div class="magnifier-thumb-wrapper demo"><a href="https://via.placeholder.com/800?text=9"><img class="img show-img" src="https://via.placeholder.com/400?text=9" data-large-img-url="https://via.placeholder.com/800?text=9"></a></div>
+            </section>
+            <div class="slick-next2"></div>
+        </div>
+        <div class="magnifier">
+          <!-- <div class="sticky-top p-3 center" style="position:relative; z-index:100; width: 600px; height: 450px"> -->     
+          <div class="sticky-top p-3 center">
+            <div class="magnifier-preview" id="preview">
+              Starry Night Over The Rhone<br>by Vincent van Gogh
+            </div>
+          </div>
+        </div>
+    </div>
+    
+
+
+    <div class="mfp-hide">
+      <div id="markup" style="border:1px solid red; background-color: lightsalmon;">
+        <div class="mfp-figure">
+          <div class="mfp-close"></div>
+          <div class="popup-container">
+            <div class="popup-main">
+              <div class="mfp-img"></div>
+            </div>
+            <div class="popup-thumbnail-container">
+              <!-- <section class="popup-thumbnail1"> -->
+                <div class="popup-thumbnail-item item1">
+                  <div href="https://via.placeholder.com/400?text=1">
+                   <img class="show-small-img" src="https://via.placeholder.com/50?text=1">
+                  </div>
+                </div>
+                <div class="popup-thumbnail-item item2">
+                  <div href="https://via.placeholder.com/400?text=2">
+                    <img class="show-small-img" src="https://via.placeholder.com/50?text=2">
+                    </div>
+                </div>
+                <div class="popup-thumbnail-item item3">
+                  <div href="https://via.placeholder.com/400?text=3">
+                    <img class="show-small-img" src="https://via.placeholder.com/50?text=3">
+                  </div>
+                </div>
+                <div class="popup-thumbnail-item item4">
+                  <div href="https://via.placeholder.com/400?text=4">
+                    <img class="show-small-img" src="https://via.placeholder.com/50?text=4">
+                  </div>
+                </div>
+                <div class="popup-thumbnail-item item5">
+                  <div href="https://via.placeholder.com/400?text=5">
+                    <img class="show-small-img" src="https://via.placeholder.com/50?text=5">
+                  </div>
+                </div>
+                <div class="popup-thumbnail-item item6">
+                  <div href="https://via.placeholder.com/400?text=6">
+                    <img class="show-small-img" src="https://via.placeholder.com/50?text=6">
+                  </div>
+                </div>
+                <div class="popup-thumbnail-item item7">
+                  <div href="https://via.placeholder.com/400?text=7">
+                    <img class="show-small-img" src="https://via.placeholder.com/50?text=7">
+                  </div>
+                </div>
+                <div class="popup-thumbnail-item item8">
+                  <div href="https://via.placeholder.com/400?text=8">
+                    <img class="show-small-img" src="https://via.placeholder.com/50?text=8">
+                  </div>
+                </div>
+                <div class="popup-thumbnail-item item9">
+                  <div href="https://via.placeholder.com/400?text=9">
+                    <img class="show-small-img" src="https://via.placeholder.com/50?text=9">
+                  </div>
+                </div>
+              <!-- </section> -->
+              <!-- <div class="item10">10</div> -->
+            </div>
+          </div>
+          <!-- <div class="mfp-img"></div> -->
+          <!-- hello -->
+          <div class="mfp-bottom-bar">
+            <div class="mfp-title"></div>
+            <div class="mfp-counter"></div>
+          </div>
+        </div> <!--// Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button-->
+      </div>
+  </div>
+ 
+  <!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js" integrity="sha512-C1zvdb9R55RAkl6xCLTPt+Wmcz6s+ccOvcr6G57lbm8M2fbgn2SUjUJbQ13fEyjuLViwe97uJvwa1EUf4F1Akw==" crossorigin="anonymous" ></script>
+
+  <script type="text/javascript" src="scripts/Event.js"></script>
+  <script type="text/javascript" src="scripts/Magnifier.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+
+      // using appendArrows
+      $(".vertical-center-thumbnail1").slick({
+        dots: false,
+        vertical: true,
+        centerMode: true,
+        centerPadding: '50px',
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        prevArrow: $('.slick-prev1'),
+        nextArrow: $('.slick-next1'),
+        // fade: true,
+        focusOnSelect: true,
+        asNavFor: ".vertical-center-thumbnail2",
+        // swipe: true,
+      });
+
+
+      $(".vertical-center-thumbnail2").slick({
+        dots: false,
+        vertical: false,
+        centerMode: true,
+        centerPadding: '50px',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: $('.slick-prev2'),
+        nextArrow: $('.slick-next2'),
+        focusOnSelect: true,
+        fade: true,
+        // asNavFor: ".vertical-center-main"
+      });
+
+        // Remove active class from all thumbnail slides
+        $(".thumbnails1 .slick-slide, .thumbnails2 .slick-slide").removeClass("slick-active");
+
+        // Set active class to first thumbnail slides
+        $(".thumbnails1 .slick-slide, .thumbnails2 .slick-slide").eq(2).addClass("slick-active");
+
+        // On before slide change match active thumbnail to current slide
+        $(".show").on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+            var mySlideNumber = nextSlide;
+            $(".thumbnails1 .slick-slide, .thumbnails2 .slick-slide").removeClass("slick-active");
+            $(".thumbnails1 .slick-slide, .thumbnails2 .slick-slide").eq(mySlideNumber).addClass("slick-active");
+        });
+
+        $('.thumbnails2 .slick-slide').magnificPopup({
+            delegate: 'a', // child items selector, by clicking on it popup will 
+            key: 'mymarkup',
+            type: 'image',
+            image: {
+                markup: '#markup',
+                cursor: 'mfp-zoom-out-cur', // Class that adds zoom cursor, will be added to body. Set to null to disable zoom out cursor.
+
+                titleSrc: 'title', // Attribute of the target element that contains caption for the slide.
+                // Or the function that should return the title. For example:
+                // titleSrc: function(item) {
+                //   return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+                // }
+
+                verticalFit: true, // Fits image in area vertically
+
+                tError: '<a href="%url%">The image</a> could not be loaded.' // Error message
+            },
+            callbacks: {
+              open: function() {
+                console.log('Popup opened', $.magnificPopup.instance);
+                        $('.popup-thumbnail-item .show-small-img').on('click', function(){
+                            console.log($(this).parent().attr('href'));
+                            $('.popup-main .mfp-img').attr('src', $(this).parent().attr('href'));
+                          });
+              },
+              close: function() {
+                console.log('Popup closed');
+                // $('.popup-thumbnail-item .show-small-img').click(false);
+                $('.popup-thumbnail-item .show-small-img').off('click');
+              }
+            }
+            // other options
+        });
+
+        // $('.popup-thumbnail-item .show-small-img').click(function(){
+        //   console.log($(this).parent().attr('href'));
+        //   // $('.popup-main .mfp-img').attr('src', $(this).parent().attr('href'));
+        // });
+
+// magnifier
+
+        var evt = new Event(),
+          m = new Magnifier(evt);
+
+        var cb = function(){
+          // alert("show");
+          // alert($('.slick-slide.slick-current.slick-active .show-img').parent().attr('href'));
+          $("#preview").parent().show();
+        }
+        var cb2 = function(){
+          // alert("hide");
+          $("#preview").parent().hide();
+        }
+
+        m.attach({
+                thumb: '.img',
+                largeWrapper: 'preview'
+        })
+    });
+</script>
+
+</body>
+</html>

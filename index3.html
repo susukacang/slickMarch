@@ -24,6 +24,11 @@
         margin: 100px auto;
     }
 
+    .vertical-slider {
+        width: 100%;
+        margin: 100px auto;
+    }
+
     .slick-slide {
       margin: 0px 20px;
     }
@@ -50,40 +55,103 @@
     .slick-current {
       opacity: 1;
     }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 40px 50px 290px auto;
+        grid-template-rows: auto;
+        gap: 20px;
+        grid-template-areas: "dummy thumbnails show";
+        border: 1px solid red;
+        /* background-color: #2196F3; */
+        height: 500px;
+    }
+    .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+    }
+    .thumbnails {
+        border: 1px solid blue;
+    }
+
+    .show {
+        border: 1px solid green;
+    }
+
   </style>
 </head>
 <body>
 
-  <section class="vertical-center-4 slider custom-slick">
+    <div class="grid-container">
+        <div class="dummy">dummy</div>
+        <div class="thumbnails">
+            <!-- <section class="vertical-center-4 vertical-slider custom-slick"> -->
+            <section class="vertical-center-x vertical-slider custom-slick">
+                <div>
+                    <img src="https://via.placeholder.com/50/0000FF/808080?text=1">
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/50/000FF0/808080?text=2">
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/50/00FF00/808080?text=3">
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/50/0FF000/808080?text=4">
+                </div>
+                <div>
+                    <img src="https://via.placeholder.com/50/FF0000/808080?text=5">
+                </div>
+            </section>
+            <!-- </section> -->
+        </div>
+        <div class="show">
+            <!-- <section class="vertical-center-4 vertical-slider custom-slick"> -->
+            <section class="vertical-slider custom-slick">
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/250/00FF00/808080?text=1">
+                </div>
+            </section>
+            <!-- </section> -->
+        </div>
+    </div>
+    <div class="arrow-container-x">
+        <div class="arrows-x"></div>
+    </div>
+
+  <section class="slider custom-slick">
     <div>
-      <img src="http://placehold.it/350x100?text=1">
+      <img src="http://placehold.it/50x50?text=1">
     </div>
     <div>
-      <img src="http://placehold.it/350x100?text=2">
+      <img src="http://placehold.it/50x50?text=2">
     </div>
     <div>
-      <img src="http://placehold.it/350x100?text=3">
+      <img src="http://placehold.it/50x50?text=3">
     </div>
     <div>
-      <img src="http://placehold.it/350x100?text=4">
+      <img src="http://placehold.it/50x50?text=4">
     </div>
     <div>
-      <img src="http://placehold.it/350x100?text=5">
+      <img src="http://placehold.it/50x50?text=5">
     </div>
     <div>
-      <img src="http://placehold.it/350x100?text=6">
+      <img src="http://placehold.it/50x50?text=6">
     </div>
     <div>
-      <img src="http://placehold.it/350x100?text=7">
+      <img src="http://placehold.it/50x50?text=7">
     </div>
     <div>
-      <img src="http://placehold.it/350x100?text=8">
+      <img src="http://placehold.it/50x50?text=8">
     </div>
     <div>
-      <img src="http://placehold.it/350x100?text=9">
+      <img src="http://placehold.it/50x50?text=9">
     </div>
     <div>
-      <img src="http://placehold.it/350x100?text=10">
+      <img src="http://placehold.it/50x50?text=10">
     </div>
   </section>
 
@@ -211,7 +279,7 @@
       <img src="http://placehold.it/350x100?text=1">
     </div>
     <div>
-      <img src="http://placehold.it/350x100?text=2">
+      <img src="http://placehold.it/350cdnjsx100?text=2">
     </div>
     <div>
       <img src="http://placehold.it/350x100?text=3">
@@ -259,78 +327,11 @@
     </div>
   </section>
 
-  <section class="center slider">
-    <div>
-      <img src="http://placehold.it/350x300?text=1">
-    </div>
-    <div>
-      <img src="http://placehold.it/350x300?text=2">
-    </div>
-    <div>
-      <img src="http://placehold.it/350x300?text=3">
-    </div>
-    <div>
-      <img src="http://placehold.it/350x300?text=4">
-    </div>
-    <div>
-      <img src="http://placehold.it/350x300?text=5">
-    </div>
-    <div>
-      <img src="http://placehold.it/350x300?text=6">
-    </div>
-    <div>
-      <img src="http://placehold.it/350x300?text=7">
-    </div>
-    <div>
-      <img src="http://placehold.it/350x300?text=8">
-    </div>
-    <div>
-      <img src="http://placehold.it/350x300?text=9">
-    </div>
-  </section>
 
-  <section class="variable slider">
-    <div>
-      <img src="http://placehold.it/350x300?text=1">
-    </div>
-    <div>
-      <img src="http://placehold.it/200x300?text=2">
-    </div>
-    <div>
-      <img src="http://placehold.it/100x300?text=3">
-    </div>
-    <div>
-      <img src="http://placehold.it/200x300?text=4">
-    </div>
-    <div>
-      <img src="http://placehold.it/350x300?text=5">
-    </div>
-    <div>
-      <img src="http://placehold.it/300x300?text=6">
-    </div>
-  </section>
 
-  <section class="lazy slider" data-sizes="50vw">
-    <div>
-      <img data-lazy="http://placehold.it/350x300?text=1-350w" data-srcset="http://placehold.it/650x300?text=1-650w 650w, http://placehold.it/960x300?text=1-960w 960w" data-sizes="100vw">
-    </div>
-    <div>
-      <img data-lazy="http://placehold.it/350x300?text=2-350w" data-srcset="http://placehold.it/650x300?text=2-650w 650w, http://placehold.it/960x300?text=2-960w 960w" data-sizes="100vw">
-    </div>
-    <div>
-      <img data-lazy="http://placehold.it/350x300?text=3-350w"  data-srcset="http://placehold.it/650x300?text=3-650w 650w, http://placehold.it/960x300?text=3-960w 960w" data-sizes="100vw">
-    </div>
-    <div>
-      <img data-lazy="http://placehold.it/350x300?text=4-350w"  data-srcset="http://placehold.it/650x300?text=4-650w 650w, http://placehold.it/960x300?text=4-960w 960w" data-sizes="100vw">
-    </div>
-    <div>
-      <img data-lazy="http://placehold.it/350x300?text=5-350w"  data-srcset="http://placehold.it/650x300?text=5-650w 650w, http://placehold.it/960x300?text=5-960w 960w" data-sizes="100vw">
-    </div>
-    <div>
-      <!-- this slide should inherit the sizes attr from the parent slider -->
-      <img data-lazy="http://placehold.it/350x300?text=6-350w"  data-srcset="http://placehold.it/650x300?text=6-650w 650w, http://placehold.it/960x300?text=6-960w 960w">
-    </div>
-  </section>
+
+
+
 
   <!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
   <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script> -->
@@ -363,7 +364,7 @@
         font-family: FontAwesome;
         content: "\f0d9";
         font-size: 22px;
-    }  
+    }  cdnjs
     .next2 {
         font-family: FontAwesome;
         content:  "\f0da";
@@ -378,7 +379,7 @@
         font-family: FontAwesome;
         content:  "\f0da";
         font-size: 22px;        
-    } 
+    } cdnjs
     .slick-next2, .slick-prev2 {
       display: inline-block;
       width: 38px;
@@ -414,10 +415,34 @@
     .arrows {
       float: right;
     }
+    .arrow-container-x{
+      font: 20px/50px NeoSansR;
+      color: #222;
+      height: 52px;
+      over-flow: hidden;
+      border-bottom: 5px solid rgba(0,0,0,.25);
+    }
+    .arrows-x {
+      float: right;
+    }
   </style>
   <script type="text/javascript">
     $(function() {
       // using custom arrows by string
+
+      $(".vertical-center-x").slick({
+        dots: false,
+        vertical: true,
+        centerMode: true,
+        // centerPadding: '1px',
+        slidesToShow: 3,
+        slidesToScroll: 2,
+        arrows: true,
+        appendArrows: $('.arrows-x'),
+        prevArrow:"<button type='button' class='slick-prev'></button>",
+        nextArrow:"<button type='button' class='slick-next'></button>"
+      });
+
       $(".vertical-center-4").slick({
         dots: true,
         vertical: true,
@@ -480,22 +505,6 @@
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 3
-      });
-      $(".center").slick({
-        dots: true,
-        infinite: true,
-        centerMode: true,
-        slidesToShow: 5,
-        slidesToScroll: 3
-      });
-      $(".variable").slick({
-        dots: true,
-        infinite: true,
-        variableWidth: true
-      });
-      $(".lazy").slick({
-        lazyLoad: 'ondemand', // ondemand progressive anticipated
-        infinite: true
       });
     });
 </script>
