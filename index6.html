@@ -94,6 +94,7 @@
         grid-area: popup-main;
         background-color: rgb(250, 228, 250);
         margin: 0px 2px;
+        padding: 100px;
     }
     /* .popup-thumbnails {
         grid-area: popup-thumbnails2;
@@ -134,10 +135,10 @@
       grid-template-columns: 100px 100px 400px auto;
       grid-template-rows: auto;
       gap: 4px;
-      grid-template-areas: "dummy thumbnails1 thumbnails2 show magnifier";
+      grid-template-areas: "dummy thumbnails1 thumbnails2 magnifier";
       border: 1px solid red;
       /* background-color: #2196F3; */
-      height: 500px;
+      /* height: 500px; */
       /* justify-items: center; */
       /* align-items: center; */
   }
@@ -192,7 +193,7 @@
     }
     .thumbnails1 .slick-slide.slick-current.slick-active {
       opacity: 1;
-      border: 5px solid rgb(128, 0, 64);
+      border: 2px solid rgb(128, 0, 64);
     }
 </style>
 <style>
@@ -257,7 +258,7 @@
     padding: 0;
     margin: 0;
     top: 1px
-}
+  }
 
 </style>
 
@@ -330,53 +331,53 @@
         <div class="mfp-figure">
           <div class="mfp-close"></div>
           <div class="popup-container">
-            <div class="popup-main">
+            <div class="popup-main" href="">
               <div class="mfp-img"></div>
             </div>
             <div class="popup-thumbnail-container">
               <!-- <section class="popup-thumbnail1"> -->
                 <div class="popup-thumbnail-item item1">
-                  <div href="https://via.placeholder.com/400?text=1">
+                  <div href="https://via.placeholder.com/400?text=1" data-zoom-url="https://via.placeholder.com/800?text=1">
                    <img class="show-small-img" src="https://via.placeholder.com/50?text=1">
                   </div>
                 </div>
                 <div class="popup-thumbnail-item item2">
-                  <div href="https://via.placeholder.com/400?text=2">
+                  <div href="https://via.placeholder.com/400?text=2" data-zoom-url="https://via.placeholder.com/800?text=2">
                     <img class="show-small-img" src="https://via.placeholder.com/50?text=2">
                     </div>
                 </div>
                 <div class="popup-thumbnail-item item3">
-                  <div href="https://via.placeholder.com/400?text=3">
+                  <div href="https://via.placeholder.com/400?text=3" data-zoom-url="https://via.placeholder.com/800?text=3">
                     <img class="show-small-img" src="https://via.placeholder.com/50?text=3">
                   </div>
                 </div>
                 <div class="popup-thumbnail-item item4">
-                  <div href="https://via.placeholder.com/400?text=4">
+                  <div href="https://via.placeholder.com/400?text=4" data-zoom-url="https://via.placeholder.com/800?text=4">
                     <img class="show-small-img" src="https://via.placeholder.com/50?text=4">
                   </div>
                 </div>
                 <div class="popup-thumbnail-item item5">
-                  <div href="https://via.placeholder.com/400?text=5">
+                  <div href="https://via.placeholder.com/400?text=5" data-zoom-url="https://via.placeholder.com/800?text=5">
                     <img class="show-small-img" src="https://via.placeholder.com/50?text=5">
                   </div>
                 </div>
                 <div class="popup-thumbnail-item item6">
-                  <div href="https://via.placeholder.com/400?text=6">
+                  <div href="https://via.placeholder.com/400?text=6" data-zoom-url="https://via.placeholder.com/800?text=6">
                     <img class="show-small-img" src="https://via.placeholder.com/50?text=6">
                   </div>
                 </div>
                 <div class="popup-thumbnail-item item7">
-                  <div href="https://via.placeholder.com/400?text=7">
+                  <div href="https://via.placeholder.com/400?text=7" data-zoom-url="https://via.placeholder.com/800?text=7">
                     <img class="show-small-img" src="https://via.placeholder.com/50?text=7">
                   </div>
                 </div>
                 <div class="popup-thumbnail-item item8">
-                  <div href="https://via.placeholder.com/400?text=8">
+                  <div href="https://via.placeholder.com/400?text=8" data-zoom-url="https://via.placeholder.com/800?text=8">
                     <img class="show-small-img" src="https://via.placeholder.com/50?text=8">
                   </div>
                 </div>
                 <div class="popup-thumbnail-item item9">
-                  <div href="https://via.placeholder.com/400?text=9">
+                  <div href="https://via.placeholder.com/400?text=9" data-zoom-url="https://via.placeholder.com/800?text=9">
                     <img class="show-small-img" src="https://via.placeholder.com/50?text=9">
                   </div>
                 </div>
@@ -474,8 +475,24 @@
                 console.log('Popup opened', $.magnificPopup.instance);
                         $('.popup-thumbnail-item .show-small-img').on('click', function(){
                             console.log($(this).parent().attr('href'));
+                            // data-mfp-src is synonymous with img src, it seems from web code inspector
                             $('.popup-main .mfp-img').attr('src', $(this).parent().attr('href'));
+                            // $('.popup-main').attr('href', $(this).parent().attr('data-zoom-url'));
+                            // $('.popup-main .mfp-img').on('click', function(){
+                            //   console.log('hi');
+                            // });
                           });
+                          // m.attach({
+                          //         thumb: '.popup-main .mfp-img',
+                          //         large: 'http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Starry_Night_Over_the_Rhone.jpg/1200px-Starry_Night_Over_the_Rhone.jpg',
+                          //         mode: 'inside',
+                          //         zoom: 3,
+                          //         zoomable: true
+                          //     });
+                        // $('.popup-main').magnificPopup({
+                          
+                        //   type: 'image',
+                        // })
               },
               close: function() {
                 console.log('Popup closed');
@@ -485,6 +502,13 @@
             }
             // other options
         });
+
+        // $('.popup-main').magnificPopup({
+        //                   items: {
+        //                     src: 'https://via.placeholder.com/1600?text=4' // replaces img src, synonymous with data-mfp-src
+        //                   },
+        //                   type: 'image',
+        //                 })
 
         // $('.popup-thumbnail-item .show-small-img').click(function(){
         //   console.log($(this).parent().attr('href'));

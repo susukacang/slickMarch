@@ -79,13 +79,13 @@
 <style>
     .popup-container {
         display: grid;
-        grid-template-columns: 400px auto;
+        grid-template-columns: 400px 800px;
         grid-template-rows: auto;
-        gap: 4px;
-        grid-template-areas: "popup-main popup-thumbnails";
+        gap: 10px;
+        grid-template-areas: 'popup-main popup-thumbnails' 'regular regular';
         border: 1px solid red;
         /* background-color: #2196F3; */
-        height: 500px;
+        /* height: 500px; */
         /* justify-items: center; */
         /* align-items: center; */
     }
@@ -94,6 +94,7 @@
         grid-area: popup-main;
         background-color: rgb(250, 228, 250);
         margin: 0px 2px;
+        padding: 100px;
     }
     /* .popup-thumbnails {
         grid-area: popup-thumbnails2;
@@ -101,15 +102,57 @@
         margin: 0px 2px;
     } */
 
+    .regular {
+      grid-area: regular;
+    }
+
     .popup-thumbnail-container {
       /* grid-area: popup-thumbnails; */
-      display: grid;
+      background-color: rgb(21, 123, 170);
+      margin: 0px 2px;
+      padding: 0px;
+      /* display: grid;
       grid-auto-columns: 50px;
       grid-auto-rows: 50px;
-      grid-gap: 10px;
+      gap: 10px; */
       background-color: #2196F3;
       padding: 50px;
+      justify-items: center;
+      align-items: center;
+      /* display: grid;
+      grid-template-columns: auto auto auto auto auto;
+      gap: 10px; */
     }
+
+    .popup-thumbnail-container .grid-item {
+      background-color:#FFF;
+      text-align: center;
+      /* padding: auto 10px; */
+      font-size: 30px;
+      border: 3px solid green;
+      /* margin: auto 10px; */
+    }
+
+    .nav-num {
+      display: block;
+    }
+
+    .popup-thumbnail-container .popup-thumbnail-gallery {
+      /* grid-area: popup-thumbnails; */
+      /* display: grid;
+      grid-auto-columns: 50px;
+      grid-auto-rows: 50px;
+      gap: 10px;
+      background-color: #2196F3;
+      padding: 50px; */
+      /* display: grid;
+      grid-template-columns: auto auto auto auto auto;
+      gap: 10px; */
+    }
+
+    /* .popup-thumbnail-container > div {
+      padding: 20px 0;
+    } */
 
 /* .popup-thumbnail1 > div {
   background-color: rgba(255, 255, 255, 0.8);
@@ -134,10 +177,10 @@
       grid-template-columns: 100px 100px 400px auto;
       grid-template-rows: auto;
       gap: 4px;
-      grid-template-areas: "dummy thumbnails1 thumbnails2 show magnifier";
+      grid-template-areas: "dummy thumbnails1 thumbnails2 magnifier";
       border: 1px solid red;
       /* background-color: #2196F3; */
-      height: 500px;
+      /* height: 500px; */
       /* justify-items: center; */
       /* align-items: center; */
   }
@@ -175,8 +218,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    /* height: 200px; */
     border: 3px solid green;
+    margin: 100px auto;
   }
 
 </style>
@@ -191,42 +235,42 @@
     }
     .thumbnails1 .slick-slide.slick-current.slick-active {
       opacity: 1;
-      border: 5px solid rgb(128, 0, 64);
+      border: 2px solid rgb(128, 0, 64);
     }
 </style>
 <style>
     .slick-next1, .slick-prev1, .slick-next2, .slick-prev2 {
-    /* display: inline-block; */
-    width: 100%;
-    height: 50px;
-    margin-top: 0px;
-    background: #2b2b2b;
-    color: #FFF;
-    margin-left: 0px;
-    cursor: pointer;
-    font: 18px/36px FontAwesome;
-    text-align: center;
-    transition: all 0.5s;
+      /* display: inline-block; */
+      width: 100%;
+      height: 50px;
+      margin-top: 0px;
+      background: #2b2b2b;
+      color: #FFF;
+      margin-left: 0px;
+      cursor: pointer;
+      font: 18px/36px FontAwesome;
+      text-align: center;
+      transition: all 0.5s;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* justify-items: center;  */
-    /* margin: auto; */
-    border: 3px solid green; 
-    /* text-align: center; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* justify-items: center;  */
+      /* margin: auto; */
+      border: 3px solid green; 
+      /* text-align: center; */
     }
 
     .slick-next1:hover, .slick-prev1:hover, .slick-next2:hover, .slick-prev2:hover {
-    background: #33687a;
+      background: #33687a;
     }
 
     .slick-next1:before , .slick-next2:before {
-    content: '\f107'
+      content: '\f107'
     }
 
     .slick-prev1:before, .slick-prev2:before {
-    content: '\f106'
+      content: '\f106'
     }
 
 </style>
@@ -244,6 +288,22 @@
       border: 1px solid rgb(255, 0, 200); width: 400px; height: 400px
   }
 </style>
+
+<style>
+  .magnifier-wrapper {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .magnifier-thumb-wrapper.demo {
+    float: left;
+    padding: 0;
+    margin: 0;
+    top: 1px
+  }
+
+</style>
+
 </head>
 <body>
     <div class="grid-container">
@@ -293,34 +353,6 @@
               <div class="magnifier-thumb-wrapper demo"><a href="https://via.placeholder.com/800?text=7"><img class="img show-img" src="https://via.placeholder.com/400?text=7" data-large-img-url="https://via.placeholder.com/800?text=7"></a></div>
               <div class="magnifier-thumb-wrapper demo"><a href="https://via.placeholder.com/800?text=8"><img class="img show-img" src="https://via.placeholder.com/400?text=8" data-large-img-url="https://via.placeholder.com/800?text=8"></a></div>
               <div class="magnifier-thumb-wrapper demo"><a href="https://via.placeholder.com/800?text=9"><img class="img show-img" src="https://via.placeholder.com/400?text=9" data-large-img-url="https://via.placeholder.com/800?text=9"></a></div>
-
-                <!-- <a href="https://via.placeholder.com/800?text=1">
-                    <img src="https://via.placeholder.com/400?text=1" class="show-img">
-                </a>
-                <a href="https://via.placeholder.com/800?text=2">
-                    <img src="https://via.placeholder.com/400?text=2" class="show-img">
-                </a>
-                <a href="https://via.placeholder.com/800?text=3">
-                    <img src="https://via.placeholder.com/400?text=3" class="show-img">
-                </a>
-                <a href="https://via.placeholder.com/800?text=4">
-                    <img src="https://via.placeholder.com/400?text=4" class="show-img">
-                </a>
-                <a href="https://via.placeholder.com/800?text=5">
-                    <img src="https://via.placeholder.com/400?text=5" class="show-img">
-                </a>
-                <a href="https://via.placeholder.com/800?text=6">
-                    <img src="https://via.placeholder.com/400?text=6" class="show-img">
-                </a>
-                <a href="https://via.placeholder.com/800?text=7">
-                    <img src="https://via.placeholder.com/400?text=7" class="show-img">
-                </a>
-                <a href="https://via.placeholder.com/800?text=8">
-                    <img src="https://via.placeholder.com/400?text=8" class="show-img">
-                </a>
-                <a href="https://via.placeholder.com/800?text=9">
-                    <img src="https://via.placeholder.com/400?text=9" class="show-img">
-                </a> -->
             </section>
             <div class="slick-next2"></div>
         </div>
@@ -341,62 +373,103 @@
         <div class="mfp-figure">
           <div class="mfp-close"></div>
           <div class="popup-container">
-            <div class="popup-main">
+            <div class="popup-main" href="">
               <div class="mfp-img"></div>
+              <button id='click'>click me</button>
+              <div class="item1">1</div>
+              <div class="item2">2</div>
             </div>
+
             <div class="popup-thumbnail-container">
+              <!-- <div class="grid-item item1"><p>1</p></div>
+              <div class="grid-item item2"><p>2</p></div>
+              <div class="grid-item item3"><p>3</p></div>
+              <div class="grid-item item4"><p>4</p></div>
+              <div class="grid-item item5"><p>5</p></div>
+              <div class="grid-item item6"><p>6</p></div>
+              <div class="grid-item item7"><p>7</p></div>
+              <div class="grid-item item8"><p>8</p></div>
+              <div class="grid-item item9"><p>9</p></div> -->
+              <div class="grid-item item11 nav-num"><p>11</p></div>
+              <div class="grid-item item12 nav-num"><p>12</p></div>
+            </div>
+            <section class="regular slider">
+              <div>
+                <img src="http://placehold.it/350x300?text=1">
+              </div>
+              <div>
+                <img src="http://placehold.it/350x300?text=2">
+              </div>
+              <div>
+                <img src="http://placehold.it/350x300?text=3">
+              </div>
+              <div>
+                <img src="http://placehold.it/350x300?text=4">
+              </div>
+              <div>
+                <img src="http://placehold.it/350x300?text=5">
+              </div>
+              <div>
+                <img src="http://placehold.it/350x300?text=6">
+              </div>
+            </section>
+            <div class="popup-thumbnail-container2">
               <!-- <section class="popup-thumbnail1"> -->
-                <div class="popup-thumbnail-item item1">
-                  <div href="https://via.placeholder.com/400?text=1">
-                   <img class="show-small-img" src="https://via.placeholder.com/50?text=1">
-                  </div>
-                </div>
-                <div class="popup-thumbnail-item item2">
-                  <div href="https://via.placeholder.com/400?text=2">
-                    <img class="show-small-img" src="https://via.placeholder.com/50?text=2">
+                <!-- <div class="popup-thumbnail-gallery">
+                  <div class="item1">1</div>
+                  <div class="popup-thumbnail-item item1">
+                    <div href="https://via.placeholder.com/400?text=1" data-zoom-url="https://via.placeholder.com/800?text=1">
+                    <img class="show-small-img" src="https://via.placeholder.com/50?text=1">
                     </div>
-                </div>
-                <div class="popup-thumbnail-item item3">
-                  <div href="https://via.placeholder.com/400?text=3">
-                    <img class="show-small-img" src="https://via.placeholder.com/50?text=3">
                   </div>
-                </div>
-                <div class="popup-thumbnail-item item4">
-                  <div href="https://via.placeholder.com/400?text=4">
-                    <img class="show-small-img" src="https://via.placeholder.com/50?text=4">
+                  <div class="popup-thumbnail-item item2">
+                    <div href="https://via.placeholder.com/400?text=2" data-zoom-url="https://via.placeholder.com/800?text=2">
+                      <img class="show-small-img" src="https://via.placeholder.com/50?text=2">
+                      </div>
                   </div>
-                </div>
-                <div class="popup-thumbnail-item item5">
-                  <div href="https://via.placeholder.com/400?text=5">
-                    <img class="show-small-img" src="https://via.placeholder.com/50?text=5">
+                  <div class="popup-thumbnail-item item3">
+                    <div href="https://via.placeholder.com/400?text=3" data-zoom-url="https://via.placeholder.com/800?text=3">
+                      <img class="show-small-img" src="https://via.placeholder.com/50?text=3">
+                    </div>
                   </div>
-                </div>
-                <div class="popup-thumbnail-item item6">
-                  <div href="https://via.placeholder.com/400?text=6">
-                    <img class="show-small-img" src="https://via.placeholder.com/50?text=6">
+                  <div class="popup-thumbnail-item item4">
+                    <div href="https://via.placeholder.com/400?text=4" data-zoom-url="https://via.placeholder.com/800?text=4">
+                      <img class="show-small-img" src="https://via.placeholder.com/50?text=4">
+                    </div>
                   </div>
-                </div>
-                <div class="popup-thumbnail-item item7">
-                  <div href="https://via.placeholder.com/400?text=7">
-                    <img class="show-small-img" src="https://via.placeholder.com/50?text=7">
+                  <div class="popup-thumbnail-item item5">
+                    <div href="https://via.placeholder.com/400?text=5" data-zoom-url="https://via.placeholder.com/800?text=5">
+                      <img class="show-small-img" src="https://via.placeholder.com/50?text=5">
+                    </div>
                   </div>
-                </div>
-                <div class="popup-thumbnail-item item8">
-                  <div href="https://via.placeholder.com/400?text=8">
-                    <img class="show-small-img" src="https://via.placeholder.com/50?text=8">
+                  <div class="popup-thumbnail-item item6">
+                    <div href="https://via.placeholder.com/400?text=6" data-zoom-url="https://via.placeholder.com/800?text=6">
+                      <img class="show-small-img" src="https://via.placeholder.com/50?text=6">
+                    </div>
                   </div>
-                </div>
-                <div class="popup-thumbnail-item item9">
-                  <div href="https://via.placeholder.com/400?text=9">
-                    <img class="show-small-img" src="https://via.placeholder.com/50?text=9">
+                  <div class="popup-thumbnail-item item7">
+                    <div href="https://via.placeholder.com/400?text=7" data-zoom-url="https://via.placeholder.com/800?text=7">
+                      <img class="show-small-img" src="https://via.placeholder.com/50?text=7">
+                    </div>
                   </div>
-                </div>
+                  <div class="popup-thumbnail-item item8">
+                    <div href="https://via.placeholder.com/400?text=8" data-zoom-url="https://via.placeholder.com/800?text=8">
+                      <img class="show-small-img" src="https://via.placeholder.com/50?text=8">
+                    </div>
+                  </div>
+                  <div class="popup-thumbnail-item item9">
+                    <div href="https://via.placeholder.com/400?text=9" data-zoom-url="https://via.placeholder.com/800?text=9">
+                      <img class="show-small-img" src="https://via.placeholder.com/50?text=9">
+                    </div>
+                  </div>
+                </div> -->
               <!-- </section> -->
               <!-- <div class="item10">10</div> -->
             </div>
           </div>
           <!-- <div class="mfp-img"></div> -->
           <!-- hello -->
+          <!-- <button id='click'>click me</button> -->
           <div class="mfp-bottom-bar">
             <div class="mfp-title"></div>
             <div class="mfp-counter"></div>
@@ -404,47 +477,8 @@
         </div> <!--// Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button-->
       </div>
   </div>
-<style>
-  .magnifier-wrapper {
-    width: 100%;
-    margin: 0 auto;
-  }
-</style>
-  <!-- <div class="magnifier-wrapper">
-      <a class="magnifier-thumb-wrapper" href="http://en.wikipedia.org/wiki/File:Starry_Night_Over_the_Rhone.jpg">
-          <img id="thumb" class="cthumb" src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Starry_Night_Over_the_Rhone.jpg/200px-Starry_Night_Over_the_Rhone.jpg">
-      </a>
-      <div class="magnifier-preview" id="preview2" style="width: 200px; height: 133px">Starry Night Over The Rhone<br>by Vincent van Gogh</div>
-  </div> -->
-  <!-- <div  class="magnifier-wrapper">
-    <a class="magnifier-thumb-wrapper" href="http://en.wikipedia.org/wiki/File:Starry_Night_Over_the_Rhone.jpg">
-        <img id="thumb2" class="cthumb" src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Starry_Night_Over_the_Rhone.jpg/200px-Starry_Night_Over_the_Rhone.jpg">
-    </a>
-    <div class="magnifier-preview" id="preview3" style="width: 200px; height: 133px">Starry Night Over The Rhone<br>by Vincent van Gogh</div>
-  </div> -->
 
-  <!-- <a id="dthumb" href="http://en.wikipedia.org/wiki/File:Starry_Night_Over_the_Rhone.jpg"></a> -->
-
-
-  <!-- <div>
-    <a class="magnifier-thumb-wrapper" href="http://en.wikipedia.org/wiki/File:Starry_Night_Over_the_Rhone.jpg">
-        <img id="thumb" src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Starry_Night_Over_the_Rhone.jpg/200px-Starry_Night_Over_the_Rhone.jpg"
-        data-large-img-url="http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Starry_Night_Over_the_Rhone.jpg/400px-Starry_Night_Over_the_Rhone.jpg"
-        data-large-img-wrapper="preview">
-    </a>
-    <div class="magnifier-preview" id="preview" style="width: 200px; height: 133px">Starry Night Over The Rhone<br>by Vincent van Gogh</div>
-  </div> -->
-
-  <div>
-    <div class="magnifier-thumb-wrapper demo"><img class="img" src="https://via.placeholder.com/200?text=1" data-large-img-url="https://via.placeholder.com/400?text=1"></div>
-    <div class="magnifier-thumb-wrapper demo"><img class="img" src="https://via.placeholder.com/200?text=2" data-large-img-url="https://via.placeholder.com/400?text=2"></div>
-    <div class="magnifier-thumb-wrapper demo"><img class="img" src="https://via.placeholder.com/200?text=3" data-large-img-url="https://via.placeholder.com/400?text=3"></div>
-    <div class="magnifier-thumb-wrapper demo"><img class="img" src="https://via.placeholder.com/200?text=4" data-large-img-url="https://via.placeholder.com/400?text=4"></div>
-    <div class="magnifier-thumb-wrapper demo"><img class="img" src="https://via.placeholder.com/200?text=5" data-large-img-url="https://via.placeholder.com/400?text=5"></div>
-    <div class="magnifier-thumb-wrapper demo"><img class="img" src="https://via.placeholder.com/200?text=6" data-large-img-url="https://via.placeholder.com/400?text=6"></div>
-
-    <div class="magnifier-preview" id="preview" style="width: 200px; height: 133px">Starry Night Over The Rhone<br>by Vincent van Gogh</div>
-</div>
+  <!-- <button id='click'>click me</button> -->
 
   <!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
   <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script> -->
@@ -504,9 +538,41 @@
         });
 
         $('.thumbnails2 .slick-slide').magnificPopup({
+
+            // mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+
+            // zoom: {
+            //   enabled: true, // By default it's false, so don't forget to enable it
+
+            //   duration: 300, // duration of the effect, in milliseconds
+            //   easing: 'ease-in-out', // CSS transition easing function
+
+            //   // The "opener" function should return the element from which popup will be zoomed in
+            //   // and to which popup will be scaled down
+            //   // By defailt it looks for an image tag:
+            //   opener: function(openerElement) {
+            //     // openerElement is the element on which popup was initialized, in this case its <a> tag
+            //     // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+            //     return openerElement.is('img') ? openerElement : openerElement.find('img');
+            //   }
+            // },
+
+
             delegate: 'a', // child items selector, by clicking on it popup will 
             key: 'mymarkup',
             type: 'image',
+            gallery: {
+              enabled:true,
+              preload: [0,2], // read about this option in next Lazy-loading section
+
+              navigateByImgClick: true,
+
+              arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
+
+              tPrev: 'Previous (Left arrow key)', // title for left button
+              tNext: 'Next (Right arrow key)', // title for right button
+              tCounter: '<span class="mfp-counter">%curr% of %total%</span>' // markup of counter
+            },
             image: {
                 markup: '#markup',
                 cursor: 'mfp-zoom-out-cur', // Class that adds zoom cursor, will be added to body. Set to null to disable zoom out cursor.
@@ -520,15 +586,146 @@
                 verticalFit: true, // Fits image in area vertically
 
                 tError: '<a href="%url%">The image</a> could not be loaded.' // Error message
+            },
+            callbacks: {
+              open: function() {
+                console.log('Popup opened', $.magnificPopup.instance);
+                $('.popup-thumbnail-item .show-small-img').on('click', function(){
+                    console.log($(this).parent().attr('href'));
+                    // data-mfp-src is synonymous with img src, it seems from web code inspector
+                    $('.popup-main .mfp-img').attr('src', $(this).parent().attr('href'));
+                    $('.popup-main').css('padding', '100px');
+                    // $('.popup-main').attr('href', $(this).parent().attr('data-zoom-url'));
+                    // $('.popup-main .mfp-img').on('click', function(){
+                    //   console.log('hi');
+                    // });
+
+                  });
+                $('.popup-main').on('click', function(){
+                    $(this).css('padding', '10px');
+                  });
+
+                var evt2 = new Event(),
+                m2 = new Magnifier(evt2);
+
+                evt2.attach('click', click, message, false);
+                m2.attach({
+                        thumb: '.popup-main .mfp-img',
+                        large: 'http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Starry_Night_Over_the_Rhone.jpg/1200px-Starry_Night_Over_the_Rhone.jpg',
+                        mode: 'inside',
+                        zoom: 3,
+                        zoomable: true
+                    });
+                        // $('.popup-main').magnificPopup({
+                          
+                        //   type: 'image',
+                        // })
+              },
+              close: function() {
+                console.log('Popup closed');
+                // $('.popup-thumbnail-item .show-small-img').click(false);
+                $('.popup-thumbnail-item .show-small-img').off('click');
+                $('.popup-main').css('padding', '100px');
+              },
+              markupParse: function(template, values, item) {
+                // Triggers each time when content of popup changes
+                console.log('Parsing:', template, values, item);
+              },
+              change: function() {
+                console.log('Content changed');
+                console.log(this.content); // Direct reference to your popup element
+              },
+              elementParse: function(item) {
+                // Function will fire for each target element
+                // "item.el" is a target DOM element (if present)
+                // "item.src" is a source that you may modify
+
+                console.log('Parsing content. Item object that is being parsed:', item);
+              },
+
+              updateStatus: function(data) {
+                console.log('Status changed', data);
+                // "data" is an object that has two properties:
+                // "data.status" - current status type, can be "loading", "error", "ready"
+                // "data.text" - text that will be displayed (e.g. "Loading...")
+                // you may modify this properties to change current status or its text dynamically
+              },
+              beforeClose: function() {
+                // Callback available since v0.9.0
+                console.log('Popup close has been initiated');
+              },
+              close: function() {
+                console.log('Popup removal initiated (after removalDelay timer finished)');
+              },
+              afterClose: function() {
+                console.log('Popup is completely closed');
+              },
+
+                // Only for ajax popup type
+              parseAjax: function(mfpResponse) {
+                // mfpResponse.data is a "data" object from ajax "success" callback
+                // for simple HTML file, it will be just String
+                // You may modify it to change contents of the popup
+                // For example, to show just #some-element:
+                // mfpResponse.data = $(mfpResponse.data).find('#some-element');
+
+                // mfpResponse.data must be a String or a DOM (jQuery) element
+
+                console.log('Ajax content loaded:', mfpResponse);
+              },
+              ajaxContentAdded: function() {
+                // Ajax content is loaded and appended to DOM
+                console.log(this.content);
+              },
+              imageLoadComplete: function() {
+                // fires when image in current popup finished loading
+                // avaiable since v0.9.0
+                console.log('Image loaded');
+              },
             }
             // other options
         });
+        // $('.popup-main').on('click', function(){
+        //                       console.log('hi' + $(this).css('padding'));
+        //                       $('.popup-main').css('padding', '10px');
+        //                     });
+        // $('.popup-main').magnificPopup({
+        //                   items: {
+        //                     src: 'https://via.placeholder.com/1600?text=4' // replaces img src, synonymous with data-mfp-src
+        //                   },
+        //                   type: 'image',
+        //                 })
 
-        $('.popup-thumbnail-item .show-small-img').click(function(){
-          // alert($(this).parent().attr('href'));
-          $('.mfp-img').attr('src', $(this).parent().attr('href'));
-        });
+        // $('.popup-thumbnail-item .show-small-img').click(function(){
+        //   console.log($(this).parent().attr('href'));
+        //   // $('.popup-main .mfp-img').attr('src', $(this).parent().attr('href'));
+        // });
 
+
+// popup slick
+      // using appendArrows
+      $(".popup-thumbnail-container").slick({
+        dots: true,
+        // vertical: true,
+        // centerMode: true,
+        // centerPadding: '50px',
+        slidesToShow: 2, //$(this).find('div p').length,
+        slidesToScroll: 3,
+        // prevArrow: $('.slick-prev1'),
+        // nextArrow: $('.slick-next1'),
+        // fade: true,
+        focusOnSelect: true,
+        // slidesPerRow:4,
+        // asNavFor: ".vertical-center-thumbnail2",
+        // swipe: true,
+      });
+
+      $(".regular").slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: $(this).find('div img').length,
+        slidesToScroll: 3
+      });
 // magnifier
 
         var evt = new Event(),
@@ -544,60 +741,29 @@
           $("#preview").parent().hide();
         }
 
-
-        // m.attach({
-        //   // thumb: '.thumbnails2 .slick-slide.slick-current.slick-active',
-        //   thumb: '.thumbnails2 .slick-slide.slick-current .show-img',
-        //   // large: $("#show1").find('img').attr('src'),
-        //   // large: $("#show1").attr('href'),
-        //   large: "images/animals.jpeg",
-        //   // large: $('.thumbnails2 .slick-slide.slick-current.slick-active').find('img').attr('src'),
-        //   largeWrapper: 'preview',
-        //   // zoom: 2,
-        //   // zoomable: true,
-        //   onthumbenter: cb,
-        //   onthumbleave: cb2,
-        // });        
-
-        // m.attach({
-        //     thumb: '.cthumb',
-        //     // large: 'http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Starry_Night_Over_the_Rhone.jpg/400px-Starry_Night_Over_the_Rhone.jpg',
-        //     // large: "images/animals.jpeg",
-        //     // large: $('#dthumb').attr('href'),
-        //     largeWrapper: 'preview',
-        //     onthumbenter: cb,
-        //     onthumbleave: cb2
-        // });
-
-        // m.attach({
-        //     thumb: '.vertical-center-thumbnail1 img',
-        //     // large: 'http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Starry_Night_Over_the_Rhone.jpg/400px-Starry_Night_Over_the_Rhone.jpg',
-        //     large: "images/animals.jpeg",
-
-        //     largeWrapper: 'preview',
-        //     onthumbenter: cb,
-        //     onthumbleave: cb2
-        // });
-
-        // m.attach({
-        //     thumb: '.show-img',
-        //     // large: 'http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Starry_Night_Over_the_Rhone.jpg/400px-Starry_Night_Over_the_Rhone.jpg',
-        //     // large: "images/animals.jpeg",
-        //     // large: $('.slick-slide.slick-current.slick-active .show-img').attr('src'),
-        //     large: $('.slick-slide.slick-current.slick-active .show-img').parent().attr('href'),
-
-        //     largeWrapper: 'preview',
-        //     onthumbenter: cb,
-        //     onthumbleave: cb2
-        // });
-
-        // m.attach({thumb: '#thumb'});
-        // m.attach({thumb: '.img'});
-
         m.attach({
                 thumb: '.img',
                 largeWrapper: 'preview'
         })
+
+        m.attach({
+                thumb: '.popup-main .mfp-img',
+                large: 'http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Starry_Night_Over_the_Rhone.jpg/1200px-Starry_Night_Over_the_Rhone.jpg',
+                mode: 'inside',
+                zoom: 3,
+                zoomable: true
+            });
+
+        var evt3     = new Event(),
+          click   = document.getElementById('click'),
+          message = function (e, src) {
+              // window.alert(e.type + ' event on "' + src.id + '"');
+              console.log(e.type + ' event on "' + src.id + '"')
+              evt3.prevent(e);
+          };
+
+        evt3.attach('click', click, message, true);
+
     });
 </script>
 

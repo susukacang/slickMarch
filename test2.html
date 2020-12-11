@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slick Playground I</title>
+  <meta charset="UTF-8">
+  <!-- <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"> -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" integrity="sha512-WEQNv9d3+sqyHjrqUZobDhFARZDko2wpWdfcpv44lsypsSuMO0kHGd3MQ8rrsBn/Qa39VojphdU6CMkpJUmDVw==" crossorigin="anonymous" />
+
+
+  <link rel="stylesheet" type="text/css" href="scripts/demo.css">
+  <link rel="stylesheet" type="text/css" href="scripts/gallery.css">
+  <link rel="stylesheet" type="text/css" href="scripts/magnifier.css">
+  <link rel="stylesheet" type="text/css" href="scripts/demo.css">
+
+ <style>
+body{
+  background:#ccc;
+  justify-content: center;
+}
+.main {
+  font-family:Arial;
+  width:500px;
+  display:block;
+  margin:0 auto;
+}
+h3 {
+    background: #fff;
+    color: #3498db;
+    font-size: 36px;
+    line-height: 100px;
+    margin: 10px;
+    padding: 2%;
+    position: relative;
+    text-align: center;
+}
+h4 {
+    text-align: center;
+}
+.action{
+  display:block;
+  margin:100px auto;
+  width:100%;
+  text-align:center;
+}
+.action a {
+  display:inline-block;
+  padding:5px 10px; 
+  background:#f30;
+  color:#fff;
+  text-decoration:none;
+}
+.action a:hover{
+  background:#000;
+}
+.buttons {
+    padding: 0;
+    margin-bottom: 10px;
+}
+.buttons .button {
+    background: #FFF;
+    color: #3498db;
+    margin: 5px;
+    width:200px;
+    float:left;
+}
+.button {
+    background: #3498db;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    width: 48%;
+}
+
+.slide-extra {
+/*   display: none; */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+}
+
+.slider-wrapper {
+    width: 80%;
+    background-color: aqua;
+}
+
+.slider-grid {
+    width: 100%;
+}
+
+/* .slide-item {
+	background-color: rebeccapurple;
+	color: aqua;
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 200px;
+	border: 1px solid white;
+} */
+ </style>
+</head>
+<body>
+    <div class="main">
+        <div class="slider slider-main">
+          <div><h3>1</h3></div>
+          <div><h3>2</h3></div>
+          <div><h3>3</h3></div>
+          <div><h3>4</h3></div>
+          <div><h3>5</h3></div>       
+        </div>
+        <div class="slider slider-info">
+          <div><h3>1</h3></div>
+          <div><h3>2</h3></div>
+          <div><h3>3</h3></div>
+          <div><h3>4</h3></div>
+          <div><h3>5</h3></div>
+        </div>
+      
+        <div class="buttons">
+          <a href="javascript:void(0)" class="button js-add-slide-extra">Add Slide Extra</a>
+        <a href="javascript:void(0)" class="button js-add-slide-extra-2">Add Slide Extra 2</a>
+          <a href="javascript:void(0)" class="button js-add-slide">Add Slide</a>
+          <a href="javascript:void(0)" class="button js-remove-slide">Remove Slide</a>
+        </div>
+      </div>
+      <div style="clear:both;"></div>
+      <h4>Slider</h4>
+      <div class="slider-wrapper">
+        <div class="slider slider-grid">
+          <div class="slide-extra slide-item"><h3>6</h3></div>
+          <div class="slide-extra slide-item"><h3>7</h3></div>
+          <div class="slide-extra slide-item"><h3>8</h3></div>
+          <div class="slide-extra slide-item"><h3>9</h3></div>
+          <div class="slide-extra slide-item"><h3>10</h3></div>
+          <div class="slide-extra slide-item"><h3>11</h3></div>
+        </div>
+      </div>
+      <div style="clear:both;"></div>
+      <h4>Grid container</h4>
+      <div class="grid-container">
+        <div class="slide-extra slide-item"><h3>6</h3></div>
+        <div class="slide-extra slide-item"><h3>7</h3></div>
+        <div class="slide-extra slide-item"><h3>8</h3></div>
+        <div class="slide-extra slide-item"><h3>9</h3></div>
+        <div class="slide-extra slide-item"><h3>10</h3></div>
+        <div class="slide-extra slide-item"><h3>11</h3></div>
+      </div>
+      
+
+  <!-- <button id='click'>click me</button> -->
+
+  <!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js" integrity="sha512-C1zvdb9R55RAkl6xCLTPt+Wmcz6s+ccOvcr6G57lbm8M2fbgn2SUjUJbQ13fEyjuLViwe97uJvwa1EUf4F1Akw==" crossorigin="anonymous" ></script>
+
+  <script type="text/javascript" src="scripts/Event.js"></script>
+  <script type="text/javascript" src="scripts/Magnifier.js"></script>
+
+  <script>
+
+      $(function(){    
+        $('.slider-main').slick({
+          infinite: false,
+          speed: 200,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          focusOnSelect: true,
+          draggable: true,
+          centerMode: true,
+        });        
+        $('.slider-info').slick({
+          infinite: false,
+          speed: 200,
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          focusOnSelect: true,
+          draggable: true,
+          centerMode: true,
+          asNavFor: '.slider-main',
+          // row: 2,
+          // slidesPerRow: 2,
+        });
+        var slideIndex = 5;
+        $('.js-add-slide').on('click', function() {
+          slideIndex++;
+          $('.slider-info').slick('slickAdd','<div><h3>' + slideIndex + '</h3></div>');
+        });
+        $('.js-add-slide-extra').on('click', function() {
+          $('.slide-extra').each(function(){
+              console.log($(this).prop('outerHTML'));
+              slideIndex++;
+              $('.slider-info').slick('slickAdd',$(this).prop('outerHTML'));
+          })
+          // slideIndex++;
+          // $('.slider-info').slick('slickAdd',$('.slide-extra').html());
+        });
+        $('.js-remove-slide').on('click', function() {
+          $('.slider-info').slick('slickRemove',slideIndex - 1);
+          if (slideIndex !== 0){
+              slideIndex--;
+          }
+        });
+
+        $('.slider-grid').slick({
+            dots: true,
+            slidesToShow: 2,
+            rows: 2,
+            slidesPerRow:2,
+            focusOnSelect: true,
+        });
+        // $('.slider-grid').slick('slickRemove',0);
+        $('.js-add-slide-extra-2').on('click', function() {
+            $('.slide-extra').each(function(){
+                console.log($(this).prop('outerHTML'));
+                slideIndex++;
+                $('.slider-grid').slick('slickAdd',$(this).prop('outerHTML'));
+            })
+        // slideIndex++;
+        // $('.slider-info').slick('slickAdd',$('.slide-extra').html());
+        });
+
+        // $('.slide-extra').each(function(){
+        //         console.log($(this).prop('outerHTML'));
+        //         slideIndex++;
+        //         $('.slider-grid').slick('slickAdd',$(this).prop('outerHTML'));
+        // })
+})
+  </script>
+ 
+
+</body>
+</html>
