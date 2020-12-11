@@ -109,6 +109,11 @@ h4 {
 	height: 200px;
 	border: 1px solid white;
 } */
+
+.slider-info .slick-current {
+  background-color: rgb(198, 120, 236);
+}
+
  </style>
 </head>
 <body>
@@ -134,7 +139,8 @@ h4 {
           <a href="javascript:void(0)" class="button js-add-slide">Add Slide</a>
           <a href="javascript:void(0)" class="button js-remove-slide">Remove Slide</a>
         </div>
-      </div>
+    </div>
+
       <div style="clear:both;"></div>
       <h4>Slider</h4>
       <div class="slider-wrapper">
@@ -192,7 +198,7 @@ h4 {
           draggable: true,
           centerMode: true,
           asNavFor: '.slider-main',
-          // row: 2,
+          rows: 2,
           // slidesPerRow: 2,
         });
         var slideIndex = 5;
