@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>jQuery Zoom Demo</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        /* styles unrelated to zoom */
+        * {
+            border: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            position: absolute;
+            top: 3px;
+            right: 28px;
+            color: #555;
+            font: bold 13px/1 sans-serif;
+        }
+
+        /* these styles are for the demo, but are not required for the plugin */
+        .zoom {
+            display: inline-block;
+            position: relative;
+        }
+
+        /* magnifying glass icon */
+        .zoom:after {
+            content: '';
+            display: block;
+            width: 33px;
+            height: 33px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: url(icon.png);
+        }
+
+        .zoom img {
+            display: block;
+        }
+
+        .zoom img::selection {
+            background-color: transparent;
+        }
+
+        /* #ex2 img:hover {
+            cursor: url(grab.cur), default;
+        }
+
+        #ex2 img:active {
+            cursor: url(grabbed.cur), default;
+        } */
+
+        #targetElem {
+            width: 800px;
+            height: 600px;
+        }
+
+        #targetElem2 {
+            width: 800px;
+            height: 600px;
+            z-index: 10;
+        }
+
+        .smallImg {
+            z-index: 1;
+            opacity: 1;
+        }
+
+        .bigImg {
+            z-index: 0;
+            opacity: 0;
+        }
+
+        .targetSize {
+            width: 560px;
+            height: 420px;
+        }
+
+        .rowheight {
+            height: 500px;
+        }
+    </style>
+
+    <style>
+        .styled {
+            border: 0;
+            line-height: 2.5;
+            padding: 0 20px;
+            font-size: 1rem;
+            text-align: center;
+            color: #fff;
+            text-shadow: 1px 1px 1px #000;
+            border-radius: 10px;
+            background-color: rgba(220, 0, 0, 1);
+            background-image: linear-gradient(to top left,
+                    rgba(0, 0, 0, .2),
+                    rgba(0, 0, 0, .2) 30%,
+                    rgba(0, 0, 0, 0));
+            box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+        }
+
+        .styled:hover {
+            background-color: rgba(255, 0, 0, 1);
+        }
+
+        .styled:active {
+            box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button1 {
+            background-color: #4CAF50;
+        }
+
+        /* Green */
+        .button2 {
+            background-color: #008CBA;
+        }
+
+        /* Blue */
+    </style>
+
+    <style>
+        .catImg img {
+            padding: 50px;
+        }
+    </style>
+
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script src='jquery.zoom.js'></script>
+    <script>
+        $(document).ready(function () {
+
+            // $('#ex3').zoom({ on: 'click', });
+
+
+            $('#ex3').zoom({
+                on: 'click',
+                url: 'https://loremflickr.com/640/480?lock=1',
+                target: '#targetElem2',
+                callback: function () {
+                    $(this).css({ width: "1280px", height: "960px" });
+                }
+            });
+
+
+
+            $('button').on('click', function () {
+                console.log('click');
+                let z1 = $('.smallImg').css('z-index');
+                let z2 = $('.bigImg').css('z-index');
+                $('.smallImg').css({ 'z-index': z2 })
+                $('.bigImg').css({ 'z-index': z1 })
+                console.log(z1, z2);
+
+            })
+
+            // $('.smallImg').on('click', function () {
+            //     console.log('click');
+            //     $(this).css("opacity", 0);
+            //     $(this).css("z-index", 0);
+            //     $('.bigImg').css("opacity", 1);
+            //     $('.bigImg').css("z-index", 1);
+            //     $('.bigImg').zoom({
+            //         // on: 'click',
+            //         url: 'https://loremflickr.com/640/480?lock=2',
+            //         target: '.bigImg',
+            //         // source: '.bigImg',
+            //         // callback: function () {
+            //         //     $(this).css({ width: "1280px", height: "960px" });
+            //         // },
+            //         magnify: 1,
+            //     });
+            //     // let z1 = $('.smallImg').css('z-index');
+            //     // let z2 = $('.bigImg').css('z-index');
+            //     // let v1 = $('.smallImg').css('opacity') == 1?0.5:1;
+            //     // $('.smallImg').css({ 'z-index': z2 })
+            //     // // $('.bigImg').css({ 'z-index': z1 })
+            //     // $('.smallImg').css({ 'opacity':v1 })
+
+            //     // console.log(z1, z2);
+            // })
+
+            // $('.bigImg').on('click', function () {
+            //     $(this).css("opacity", 0); $(this).css("z-index", 0);
+            //     $('.smallImg').css("opacity", 1); $('.smallImg').css("z-index", 1);
+            //     $(this).trigger('zoom.destroy');
+            // });
+
+            // let zoom = false;
+            // $('.catImg').on('click', function () {
+            //     zoom = !zoom;
+            //     if (zoom) {
+                    
+            //         $(this).zoom({
+            //             // on: 'click',
+            //             magnify: 1.2,
+            //         });
+
+            //         $(this).children('img').css("padding", "0px")
+            //     } else {
+            //         $(this).children('img').css("padding", "50px");
+            //         $(this).trigger('zoom.destroy');
+            //     }
+
+            // });
+            $('.catImg').zoom({
+                on: 'click',
+                // url: 'https://loremflickr.com/640/480?lock=2',
+                // target: '.bigImg',
+                // source:  '.bigImg',
+                // callback: function () {
+                //     $(this).css({ width: "1280px", height: "960px" });
+                // },
+                magnify: 2,
+            });
+
+            // $('.smallImg').zoom({
+            //     on: 'click',
+            //     url: 'https://loremflickr.com/640/480?lock=2',
+            //     target: '.bigImg',
+            //     source:  '.bigImg',
+            //     // callback: function () {
+            //     //     $(this).css({ width: "1280px", height: "960px" });
+            //     // },
+            //     magnify: 2,
+            // });
+
+
+
+            // $('.bigImg').on('click', function () {
+            //     console.log('click');
+            //     let z1 = $('.smallImg').css('z-index');
+            //     let z2 = $('.bigImg').css('z-index');
+            //     $('.smallImg').css({ 'z-index': z2 })
+            //     $('.bigImg').css({ 'z-index': z1 })
+            //     console.log(z1, z2);
+            // })
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <div class='container-fluid'>
+        <div class="row">
+            <!-- <div class="col p-2 d-flex justify-content-center align-items-center bg-info"> -->
+            <div class="col p-2 bg-info">
+                <div class='zoom' id='ex3'>
+                    <img class="" src='https://loremflickr.com/320/240?lock=1' width='320' height='240'
+                        alt='Daisy on the Ohoopee' />
+
+                    <!-- <p>Click to activate</p> -->
+                </div>
+                <div class="bg-success" id="targetElem2"></div>
+            </div>
+
+            <div class="col p-2 d-flex justify-content-center align-items-center bg-warning">
+                <span class='zoom' id='ex3'>
+                    <img src='https://loremflickr.com/640/480?lock=1' width='640' height='480'
+                        alt='Daisy on the Ohoopee' />
+                    <p>Click to activate</p>
+                </span>
+            </div>
+        </div>
+        <div class="row rowheight">
+            <!-- <div class="col bg-primary" id="targetElem"></div> -->
+            <div class="col d-flex justify-content-center align-items-center bg-warning">
+                <!-- <div class="smallImg position-absolute" data-position="right">
+                    <img class="" src='https://loremflickr.com/320/240?lock=2' width='320' height='240'
+                        alt='Daisy on the Ohoopee' />
+                </div>
+                <div class="bigImg position-absolute targetSize">
+                    <img class="" src='https://loremflickr.com/640/480?lock=2' width='640' height='480'
+                        alt='Daisy on the Ohoopee' />
+                </div> -->
+
+                <div class="catImg position-absolute">
+                    <img class="" src='https://loremflickr.com/640/480?lock=2' width='640' height='480'
+                        alt='Daisy on the Ohoopee' />
+                </div>
+            </div>
+            <div class="col bg-secondary">
+                <!-- <img class="" src='https://loremflickr.com/640/480?lock=3' width='640' height='480'
+                    alt='Daisy on the Ohoopee' /> -->
+            </div>
+        </div>
+
+        <button class="button button1">Click</button>
+
+    </div>
+
+</body>
+
+</html>

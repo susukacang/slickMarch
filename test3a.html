@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Slick Playground I</title>
+  <!-- <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"> -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"
+    integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"
+    integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css"
+    integrity="sha512-WEQNv9d3+sqyHjrqUZobDhFARZDko2wpWdfcpv44lsypsSuMO0kHGd3MQ8rrsBn/Qa39VojphdU6CMkpJUmDVw=="
+    crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="scripts/demo.css">
+  <link rel="stylesheet" type="text/css" href="scripts/gallery.css">
+  <link rel="stylesheet" type="text/css" href="scripts/magnifier.css">
+  <link rel="stylesheet" type="text/css" href="scripts/demo.css">
+
+  <style>
+    body {
+      background: #ccc;
+      justify-content: center;
+    }
+
+    .main {
+      font-family: Arial;
+      /* width:500px; */
+      width: 80%;
+      display: block;
+      margin: 0 auto;
+    }
+
+    h3 {
+      background: #fff;
+      color: #3498db;
+      font-size: 36px;
+      line-height: 100px;
+      margin: 10px;
+      padding: 2%;
+      position: relative;
+      text-align: center;
+    }
+
+    h4 {
+      text-align: center;
+    }
+
+    .action {
+      display: block;
+      margin: 100px auto;
+      width: 100%;
+      text-align: center;
+    }
+
+    .action a {
+      display: inline-block;
+      padding: 5px 10px;
+      background: #f30;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .action a:hover {
+      background: #000;
+    }
+
+    .buttons {
+      padding: 0;
+      margin-bottom: 10px;
+    }
+
+    .buttons .button {
+      background: #FFF;
+      color: #3498db;
+      margin: 5px;
+      width: 200px;
+      float: left;
+    }
+
+    .button {
+      background: #3498db;
+      color: #fff;
+      display: block;
+      font-size: 16px;
+      margin: 20px auto;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      width: 48%;
+    }
+
+    .slide-extra {
+      /*   display: none; */
+    }
+
+    .grid-container {
+      display: grid !important;
+      grid-template-columns: repeat(4, auto);
+    }
+
+    .slick-container {
+      /* display: grid !important; */
+      /* grid-template-columns: repeat(4, auto); */
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .slick-grid-container {
+      /* display: grid !important; */
+      /* grid-template-columns: repeat(4, auto); */
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .slider-wrapper {
+      width: 80%;
+      background-color: aqua;
+      margin: 0 auto;
+    }
+
+    /* .slider-grid {
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+} */
+
+    /* .slider-grid .slick-list {
+  display: grid; width: 100%;
+} */
+    /* .slider-grid .slick-track {
+  display: grid; width: 100% !important ;
+  grid-template-columns: repeat(4, auto);
+} */
+
+    .slider-grid .slick-track::before,
+    .slider-grid .slick-track::after {
+      content: none;
+    }
+
+    .slider-grid .slick-current {
+      background-color: rgb(6, 73, 70);
+    }
+
+    .slider-grid .slick-current h3 {
+      background-color: rgb(98, 250, 242);
+    }
+
+    .slide-extra h3 {
+      background: rgb(223, 97, 97);
+      color: #3498db;
+      font-size: 36px;
+      line-height: 100px;
+      margin: 10px;
+      padding: 2%;
+      position: relative;
+      text-align: center;
+    }
+
+    /* .slide-item {
+	background-color: rebeccapurple;
+	color: aqua;
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 200px;
+	border: 1px solid white;
+} */
+
+    .slider-info .slick-current {
+      /* background-color: rgb(198, 120, 236); */
+    }
+
+
+    .slick-container .slick-track:before,
+    .slick-container .slick-track:after {
+      display: '';
+
+      content: unset;
+    }
+
+    .slider-info .flick-current {
+      background-color: rgb(175, 57, 126);
+    }
+
+
+    .zoom {
+      display: inline-block;
+      position: relative;
+    }
+
+    /* magnifying glass icon */
+    .zoom:after {
+      content: '';
+      display: block;
+      width: 33px;
+      height: 33px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: url(icon.png);
+    }
+
+    .zoom img {
+      display: block;
+    }
+
+    .zoom img::selection {
+      background-color: transparent;
+    }
+
+    .slider-main slick-current img:hover {
+      cursor: url(grab.cur), default;
+    }
+
+    .slider-main slick-current img:active {
+      cursor: url(grabbed.cur), default;
+    }
+  </style>
+
+
+  <style>
+    .ref {
+      width: 400px;
+      height: 100px;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      background-color: blueviolet;
+      display: block;
+      z-index: 10;
+      opacity: 0.2;
+    }
+
+    .ref h2 {
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- <div class="ref"><h2>ref</h2></div> -->
+
+
+  <style>
+    .slider-main div img {
+      width: 100%;
+      /* height: 50px; */
+      margin: 0 auto;
+    }
+  </style>
+
+  <style>
+    .ex1 {
+      margin: 100px;
+    }
+
+    .targetZoom {
+      width: 600px;
+      height: 600px;
+    }
+
+    /* .ex1 img {
+      width: 320px;
+      height: 240px;
+    } */
+
+    .a {
+      width: 320px;
+      height: 240px;
+    }
+
+    .b {
+      width: 480px;
+      height: 360px;
+    }
+
+    .slider-main .zoom {
+      padding: 50px;
+    }
+
+    .slider-main div img:not(.zoomImg) {
+      width: 640px;
+      height: 480px;
+      /* height: 50px; */
+      margin: 0 auto;
+    }
+  </style>
+
+  <style>
+    .slider-info div img {
+      width: 50px;
+      height: 50px;
+      margin: 20px auto;
+    }
+
+    .white-popup {
+      position: relative;
+      background: #FFF;
+      padding: 20px;
+      /* width: auto; */
+      /* max-width: 200px; */
+      margin: 20px auto;
+      text-align: center;
+      width: 80%;
+    }
+
+    .button {
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    .button1 {
+      background-color: #4CAF50;
+    }
+
+    /* Green */
+    .button2 {
+      background-color: #008CBA;
+    }
+  </style>
+
+  <!-- <div class="ex1">
+  <span class='zoom' id='ex1'> -->
+  <!-- <img src='slick_img/random_1_640_480.jpg' width='320' height='240' alt='Daisy on the Ohoopee'/> -->
+  <!-- <img src='slick_img/random_1_640_480.jpg' class="a" alt='Daisy on the Ohoopee'/> -->
+  <!-- <p>Click to activate</p> -->
+  <!-- </span>
+</div> -->
+  <div class='targetZoom'></div>
+
+  <button id='click' class="button button1">Click</button>
+  <!-- edit mfp-hide2 to mfp-hide later -->
+  <div class="main mfp-hide">
+    <div id="markup">
+      <div class="mfp-figure">
+        <div class="mfp-close"></div>
+        <div class="white-popup">
+          <div class='container-fluid'>
+            <div class="row">
+              <div class="col p-2 bg-info">
+                <div class="slider slider-main">
+                  <div class="zoom"><img src="slick_img/random_1_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_2_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_3_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_4_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_5_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_6_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_7_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_8_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_9_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_10_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_11_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_12_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_13_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_14_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_15_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_16_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_17_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_18_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_19_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_20_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_21_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_22_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_23_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_24_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_25_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_26_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_27_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_28_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_29_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_30_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_31_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_32_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_33_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_34_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_35_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_36_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_37_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_38_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_39_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div class="zoom"><img src="slick_img/random_40_640_480.jpg" class="img-responsive w-100" /></div>
+                </div>
+              </div>
+              <div class="col p-2 d-flex justify-content-center align-items-center bg-warning">
+                <div class="slider slider-info">
+                  <div><img src="slick_img/random_1_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_2_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_3_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_4_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_5_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_6_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_7_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_8_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_9_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_10_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_11_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_12_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_13_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_14_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_15_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_16_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_17_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_18_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_19_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_20_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_21_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_22_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_23_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_24_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_25_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_26_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_27_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_28_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_29_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_30_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_31_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_32_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_33_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_34_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_35_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_36_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_37_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_38_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_39_640_480.jpg" class="img-responsive w-100" /></div>
+                  <div><img src="slick_img/random_40_640_480.jpg" class="img-responsive w-100" /></div>
+                  <!-- <div><img src="slick_img/random_1_320_240.jpg" /></div>
+          <div><img src="slick_img/random_2_320_240.jpg" /></div>
+          <div><img src="slick_img/random_3_320_240.jpg" /></div>
+          <div><img src="slick_img/random_4_320_240.jpg" /></div>
+          <div><img src="slick_img/random_5_320_240.jpg" /></div>
+          <div><img src="slick_img/random_6_320_240.jpg" /></div>
+          <div><img src="slick_img/random_7_320_240.jpg" /></div>
+          <div><img src="slick_img/random_8_320_240.jpg" /></div>
+          <div><img src="slick_img/random_9_320_240.jpg" /></div>
+          <div><img src="slick_img/random_10_320_240.jpg" /></div>   
+          <div><img src="slick_img/random_11_320_240.jpg" /></div>
+          <div><img src="slick_img/random_12_320_240.jpg" /></div>
+          <div><img src="slick_img/random_13_320_240.jpg" /></div>
+          <div><img src="slick_img/random_14_320_240.jpg" /></div>
+          <div><img src="slick_img/random_15_320_240.jpg" /></div>
+          <div><img src="slick_img/random_16_320_240.jpg" /></div>
+          <div><img src="slick_img/random_17_320_240.jpg" /></div>
+          <div><img src="slick_img/random_18_320_240.jpg" /></div>
+          <div><img src="slick_img/random_19_320_240.jpg" /></div>
+          <div><img src="slick_img/random_20_320_240.jpg" /></div>   
+          <div><img src="slick_img/random_21_320_240.jpg" /></div>
+          <div><img src="slick_img/random_22_320_240.jpg" /></div>
+          <div><img src="slick_img/random_23_320_240.jpg" /></div>
+          <div><img src="slick_img/random_24_320_240.jpg" /></div>
+          <div><img src="slick_img/random_25_320_240.jpg" /></div>
+          <div><img src="slick_img/random_26_320_240.jpg" /></div>
+          <div><img src="slick_img/random_27_320_240.jpg" /></div>
+          <div><img src="slick_img/random_28_320_240.jpg" /></div>
+          <div><img src="slick_img/random_29_320_240.jpg" /></div>
+          <div><img src="slick_img/random_30_320_240.jpg" /></div>   
+          <div><img src="slick_img/random_31_320_240.jpg" /></div>
+          <div><img src="slick_img/random_32_320_240.jpg" /></div>
+          <div><img src="slick_img/random_33_320_240.jpg" /></div>
+          <div><img src="slick_img/random_34_320_240.jpg" /></div>
+          <div><img src="slick_img/random_35_320_240.jpg" /></div>
+          <div><img src="slick_img/random_36_320_240.jpg" /></div>
+          <div><img src="slick_img/random_37_320_240.jpg" /></div>
+          <div><img src="slick_img/random_38_320_240.jpg" /></div>
+          <div><img src="slick_img/random_39_320_240.jpg" /></div>
+          <div><img src="slick_img/random_40_320_240.jpg" /></div>    -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mfp-bottom-bar">
+            <div class="mfp-title"></div>
+            <div class="mfp-counter"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="clear:both;"></div>
+
+
+  <style>
+    .flick-slide {
+      display: inline-block !important;
+    }
+  </style>
+
+  <div style="clear:both;"></div>
+
+  <!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous"></script> -->
+  <!-- <script src="scripts/myslick2.js"></script> -->
+  <!-- <script src="scripts/myslick2_2.js"></script> -->
+  <script src="slick/slick.js"></script>
+  <!-- <script src="slick/slick_customflick.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"
+    integrity="sha512-C1zvdb9R55RAkl6xCLTPt+Wmcz6s+ccOvcr6G57lbm8M2fbgn2SUjUJbQ13fEyjuLViwe97uJvwa1EUf4F1Akw=="
+    crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="scripts/Event.js"></script>
+  <script type="text/javascript" src="scripts/Magnifier.js"></script>
+  <script src='jquery.zoom.js'></script>
+
+  <script>
+    $(document).ready(function () {
+      // $('#ex1').zoom(
+      //   {target: '.targetZoom'}
+      // );
+      // $('#ex2').zoom({ on:'grab' });
+      // $('.slider-main').zoom({ on:'click' });			 
+      // $('#ex4').zoom({ on:'toggle' });
+
+      // $('.slider-main .zoom').closest('.slick-current').find('img:first')
+      //   .wrap('<span style="display:inline-block"></span>').css('display', 'block').parent()
+      //   .zoom({magnify:1});
+
+      // $('.slider-main .zoom').closest('.slick-current').find('img:first')
+      //   .wrap('<span style="display:inline-block"></span>').css('display', 'block').parent()
+      //   .trigger('zoom.destroy')
+
+      // $('#ex1').zoom({ 
+      //   on:'click', 
+      //   url: 'slick_img/random_1_640_480.jpg',
+      //   callback: function(){
+      //   $(this).css({width: "1280px", height: "960px"});
+      // } });	
+
+      // $('#ex1').on('click', function(event){
+      //   var _ = this;
+      //   let w = $(_).children("img").outerWidth();
+      //   let h = $(_).children("img").outerHeight();
+      //   console.log(event.pageX,event.pageY,w,h)
+      //   // $(_).parent().toggleClass('sizeup');
+      //   $(_).children("img").each(function(){
+      //     if ($(this).hasClass('a')) {
+      //       $(this).removeClass('a');
+      //       $(this).addClass('b');
+      //       $('#ex1').zoom();
+      //     } else {
+      //       $(this).removeClass('b');
+      //       $(this).addClass('a');
+      //       $('#ex1').trigger('zoom.destroy');
+      //     }
+      //       // $(this).toggleClass('a').toggleClass('b');
+      //     });
+      // }).trigger('mouseover.zoom');
+
+    });
+  </script>
+
+  <script>
+
+    $(function () {
+
+      $('.slider-cats').slick({
+        infinite: false,
+        speed: 200,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        focusOnSelect: true,
+        draggable: true,
+        // centerMode: true,
+        // fade: true,
+      });
+
+
+      $('.slider-main').slick({
+        infinite: false,
+        speed: 200,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        focusOnSelect: false,
+        draggable: false,
+        // centerMode: true,
+        // fade: true,
+      });
+      // disable asNavFor
+      $('.slider-info').slick({
+        infinite: false,
+        speed: 200,
+        slidesToShow: 15,
+        slidesToScroll: 1,
+        focusOnSelect: true,
+        draggable: true,
+        centerMode: true,
+        // asNavFor: '.slider-main',
+        rows: 3,
+        // myindex: "5"
+        slidesPerRow: 1,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 12,
+              rows: 4,
+            }
+          },
+          {
+            breakpoint: 640,
+            settings: {
+              slidesToShow: 8,
+              rows: 6,
+            }
+          }
+        ]
+      });
+      // rows and slidesPerRow used together for grid i.e. slidesPerRow refers to how many columns in a row
+      // if slidesPerRow:2, rows:3 then 
+      //  1  2    7  8    13 14
+      //  3  4    9 10    15 16
+      //  5  6   11 12    17 18
+      //
+
+      $('.slider-info')[0].slick['$slideTrack']
+        .children().children().children()
+        .each(function (index) {
+          this.setAttribute('data-flick-index', index)
+        })
+
+      $('.slider-info').each(function () {
+        var _ = this;
+        console.log('....1', _)
+        _.slick['$slideTrack'].children().on('click.slick', function () {
+          console.log('click');
+          console.log(event);
+          var index = parseInt(event.target.closest('[data-flick-index]').getAttribute('data-flick-index'));
+          _.slick['gridIndex'] = index;
+          $(_).trigger('afterChange2', [index]);
+        });
+      });
+
+      $('.slider-info').on('afterChange2', function (event, index) {
+        $(this).find('[data-flick-index]').removeClass('flick-current');
+        $(this).find('[data-flick-index]').eq(index).addClass('flick-current');
+
+
+        $('.slider-main').find('.slick-current').find('.zoom')
+          .trigger('zoom.destroy');
+
+        $('.slider-main').slick('slideHandler', index, false, false)
+        console.log('afterChanges', index)
+        $('.slider-main').find('[data-slick-index]').eq(index).find('.zoom')
+          .zoom({ magnify: 1 });
+
+
+
+        // // better way is to apply zoom to all elements in slider-main
+
+        // $('.slider-main').find('.zoom').zoom({magnify:1});
+      });
+
+      $('.slider-info').addClass('container-fluid');
+      $('.slider-info .slick-track').addClass('row');
+      $('.slider-info .slick-slide').each(function () {
+        $(this).addClass('col-xs-12');
+      });
+
+
+      $('[data-flick-index]').on('click', function (index, element) {
+        console.log("flick", $(this).data('flick-index'));
+      })
+
+
+      $('.slider-info').on('breakpoint', function (event, elem, triggerBreakpoint) {
+        console.log(elem, triggerBreakpoint);
+        var _ = this;
+        console.log('....2', _);
+        console.log('....3', _.slick['$slideTrack'].find('[data-flick-index]'));
+        // (function(){
+        $('[data-flick-index]').on('click', function (elem) { //(index, element, a, b, c) {
+          console.log("flick", $(this).data('flick-index'));
+          // console.log(event);
+          // console.log(index, element, a, b, c);
+          // console.log(elem)
+          // console.log(this, $(this).closest('.slick-track'))
+          x = this;
+          var index = this.getAttribute('data-flick-index');
+          $(this).closest('.slick-track').find('[data-flick-index]').removeClass('flick-current');
+          $(this).closest('.slick-track').find('[data-flick-index]').eq(index).addClass('flick-current');
+          $('.slider-main').slick('slideHandler', index, false, false)
+        })
+        // })()
+      });
+
+
+      // $('.slider-info').on('orientationchange', function (event, elem, triggerBreakpoint) {
+      //   console.log(elem, triggerBreakpoint);
+      // });
+
+
+      // $('.slider-main slick-current').zoom({ on:'click' });
+
+      // $('.slider-main .zoom').closest('.slick-current').find('img:first')
+      //   .wrap('<span style="display:inline-block"></span>').css('display', 'block').parent()
+      //   .zoom({magnify:1});
+      // better way is to apply zoom to all elements in slider-main
+
+      $('.slider-main').find('.zoom').zoom({ on: 'click', magnify: 2 });
+      $('.slider-info').on('click', function () {
+        $('.slider-main').find('.zoom').trigger('zoom.destroy');
+        $('.slider-main').find('.zoom').zoom({ on: 'click', magnify: 2 });
+      })
+
+
+      //  why is this magnificpopup outside document load block? put back inside
+      $('#click').magnificPopup({
+        closeOnContentClick: false,
+        key: 'mymarkup',
+        type: 'inline',
+        inline: {
+          markup: '#markup',
+          cursor: 'mfp-zoom-out-cur',
+          titleSrc: 'title',
+          // verticalFit: true,
+          tError: '<a href="%url%">The image</a> could not be loaded.'
+        },
+        // callbacks: {
+        //     open: function() {
+        //         const $slider = $('.testslick.slider');
+
+        //         if(!$slider.hasClass('slick-initialized')) {
+        //             $slider.slick({
+        //                 infinite: true,
+        //                 slidesToShow: 1,
+        //                 dots: true,
+        //             })
+        //         } else {
+        //             console.log('has class');
+        //         }
+
+        //         $slider.slick('slickGoTo', $(this).attr('index'));
+        //     },
+        //     close: function() {
+        //         $('.testslick').slick('unslick');
+        //     },
+        //     afterClose: function() {
+        //         $('.testslick').slick({
+        //             slidesToShow: 5,
+        //             slidesToScroll: 1,
+        //             // infinite: false,
+        //         })
+        //     },
+        // }
+      })
+    });
+    var x;
+
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magnific Popup</title>
+
+    <!-- <link rel="stylesheet" href="javascript/jquery/magnific-popup/magnific-popup.css" /> -->
+
+    <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+
+    <!-- Magnific Popup core JS file -->
+    <!-- <script src="javascript/jquery/magnific-popup/jquery.magnific-popup.js"></script> -->
+
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css"
+  integrity="sha512-WEQNv9d3+sqyHjrqUZobDhFARZDko2wpWdfcpv44lsypsSuMO0kHGd3MQ8rrsBn/Qa39VojphdU6CMkpJUmDVw=="
+  crossorigin="anonymous" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+  integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+  crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"
+  integrity="sha512-C1zvdb9R55RAkl6xCLTPt+Wmcz6s+ccOvcr6G57lbm8M2fbgn2SUjUJbQ13fEyjuLViwe97uJvwa1EUf4F1Akw=="
+  crossorigin="anonymous"></script> -->
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script> -->
+
+
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/magnific-popup.css"
+        integrity="sha512-4a1cMhe/aUH16AEYAveWIJFFyebDjy5LQXr/J/08dc0btKQynlrwcmLrij0Hje8EWF6ToHCEAllhvGYaZqm+OA=="
+        crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.js"
+        integrity="sha512-/jeu5pizOsnKAR+vn28EbhN5jDSPTTfRzlHZh8qSqB77ckQd3cOyzCG9zo20+O7ZOywiguSe+0ud+8HQMgHH9A=="
+        crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript" src="javascript/magnific-popup/jquery.magnific-popup.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"
+        integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css"
+        integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+        crossorigin="anonymous" />
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"
+        integrity="sha512-WNZwVebQjhSxEzwbettGuQgWxbpYdoLf7mH+25A7sfQbbxKeS5SQ9QBf97zOY4nOlwtksgDA/czSTmfj4DUEiQ=="
+        crossorigin="anonymous"></script> -->
+    <script src="slick/slick_customflick.js"></script>
+    <script src='jquery.zoom.js'></script>
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .slider-main {
+            width: 100%;
+            margin: 0px auto;
+        }
+
+
+        /* .slider-main,
+        .slider-thumbnail {
+            width: 100%;
+            margin: 0px auto;
+        } */
+
+        .slick-slide {
+            margin: 0px 20px;
+        }
+
+        .slick-slide img {
+            width: 100%;
+        }
+
+        .slider-main .slick-slide img,
+        .slider-thumbnail .slick-slide img {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+            color: black;
+        }
+
+        .slick-slide {
+            transition: all ease-in-out .3s;
+            opacity: .2;
+        }
+
+        .slick-active {
+            opacity: .5;
+        }
+
+        .slick-current {
+            opacity: 1;
+        }
+
+        .w-10 {
+            width: 10%;
+        }
+
+        .slider-thumbnail .slick-slide,
+        .slider-thumbnail-popup .slick-slide {
+            opacity: 1;
+        }
+    </style>
+
+    <style>
+        .white-popup {
+            position: relative;
+            background: #FFF;
+            padding: 20px;
+            width: auto;
+            /* max-width: 500px; */
+            /* margin: 20px auto; */
+        }
+    </style>
+
+    <style>
+        .slider-main-popup img {
+            padding: 50px;
+        }
+
+        .slider-thumbnail .flick-current,
+        .slider-thumbnail-popup .flick-current {
+            background-color: rgb(175, 57, 126);
+            border: 2px solid rgb(57, 65, 175);
+        }
+
+        .addBorder {
+            background-color: rgb(57, 65, 175);
+            border: 2px solid rgb(175, 57, 126);
+        }
+    </style>
+
+    <style>
+        .description {
+            word-wrap: break-word;
+        }
+
+        .mfp-figure {
+            line-height: inherit;
+        }
+    </style>
+
+    <style>
+        .mainTarget {
+            /* display: block;
+            float: left; */
+            position: -webkit-sticky !important;
+            /* z-index: 1000; */
+            position: sticky !important;
+            /* position: absolute; */
+            /* position: fixed; */
+            /* top: 100; */
+            /* left: 0; */
+            /* margin: 20px; */
+            top: 0px;
+            padding: 20px;
+            height: 480px;
+            /* opacity: 0.1; */
+            /* display: none; */
+            /* display: block; */
+            z-index: 1000;
+        }
+
+        div.sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 100px;
+            /* stick at 100px from top */
+            background-color: yellow;
+            padding: 50px;
+            font-size: 20px;
+        }
+
+        .text-description {
+            /* z-index: 10; */
+            position: absolute;
+            top: 0;
+        }
+
+        .rowheight {
+            height: 800px;
+            /* sticky elements cannot go pass the bottom of the container */
+        }
+    </style>
+    <style>
+        .slick-next1,
+        .slick-prev1,
+        .slick-next2,
+        .slick-prev2 {
+            /* display: inline-block; */
+            /* width: 100%; */
+            width: 20px;
+            height: 20px;
+            margin-top: 0px;
+            background: #2b2b2b;
+            color: #FFF;
+            margin-left: auto;
+            margin-right: auto;
+            cursor: pointer;
+            font: 18px/36px FontAwesome;
+            text-align: center;
+            transition: all 0.5s;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* justify-items: center;  */
+            /* margin: auto; */
+            /* border: 3px solid green; */
+            /* text-align: center; */
+            border-radius: 50%;
+            /* font-family: 'slick'; */
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        .slick-next1:hover,
+        .slick-prev1:hover,
+        .slick-next2:hover,
+        .slick-prev2:hover {
+            background: #33687a;
+        }
+
+        .slick-next1:before,
+        .slick-next2:before {
+            content: '\f107'
+        }
+
+        .slick-prev1:before,
+        .slick-prev2:before {
+            content: '\f106'
+        }
+    </style>
+    <style>
+        .slider-thumbnail .slick-slide img {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .slider-thumbnail-popup .slick-slide {
+            margin: 0px;
+        }
+    </style>
+    <style>
+        .mfp-close {
+            border-radius: 5px;
+            border: 2px solid #73AD21 !important;
+            margin: 4px;
+            /* padding: 20px !important; */
+            /* width: 200px; */
+            /* height: 150px; */
+        }
+    </style>
+
+    <!--  not due to this -->
+    <style>
+        /* .mfp-figure {
+	line-height: 0;
+} */
+
+        /* spaced out thumbnails so that selection border can be seen */
+        .slider-thumbnail-popup img {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .slider-thumbnail img {
+            /* padding: 10px; */
+            cursor: pointer;
+        }
+
+        /* initialize cursor */
+        .slider-main-popup img {
+            cursor: zoom-in;
+        }
+
+        /* .slider-main-popup img .zoomImg{
+        cursor:zoom-out;
+    } */
+    </style>
+</head>
+
+<body>
+    <!-- <div class="sticky">I will stick to the screen when you reach my scroll position</div> -->
+    <!-- <button id='click' class="button button1">Click</button> -->
+    <div class="container-fluid">
+        <div class="row rowheight">
+            <div class="col-md-6 col-sm-6">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-4 d-none d-sm-block p-0 bg-warning order-first">
+                            <div class="row">
+                                <div class="col">
+                                    <!-- slick overrides any width height dimensions -->
+                                    <div class="slick-prev1"></div>
+                                    <div class="slider-thumbnail">
+                                        <img src="slick_img/random_1_640_480.jpg" class="img-responsive w-100" />
+                                        <img src="slick_img/random_2_640_480.jpg" class="img-responsive w-100" />
+                                        <img src="slick_img/random_3_640_480.jpg" class="img-responsive w-100" />
+                                        <img src="slick_img/random_4_640_480.jpg" class="img-responsive w-100" />
+                                        <img src="slick_img/random_5_640_480.jpg" class="img-responsive w-100" />
+                                        <img src="slick_img/random_6_640_480.jpg" class="img-responsive w-100" />
+                                        <img src="slick_img/random_7_640_480.jpg" class="img-responsive w-100" />
+                                        <img src="slick_img/random_8_640_480.jpg" class="img-responsive w-100" />
+                                        <img src="slick_img/random_9_640_480.jpg" class="img-responsive w-100" />
+                                        <img src="slick_img/random_10_640_480.jpg" class="img-responsive w-100" />
+                                        <img src="slick_img/random_11_640_480.jpg" class="img-responsive w-100" />
+                                        <img src="slick_img/random_12_640_480.jpg" class="img-responsive w-100" />
+                                        <img src="slick_img/random_13_640_480.jpg" class="img-responsive w-100" />
+                                        <img src="slick_img/random_14_640_480.jpg" class="img-responsive w-100" />
+                                        <img src="slick_img/random_15_640_480.jpg" class="img-responsive w-100" />
+                                        <img src="slick_img/random_16_640_480.jpg" class="img-responsive w-100" />
+                                    </div>
+                                    <div class="slick-next1"></div>
+                                </div>
+                            </div>
+                            <div class="row description">
+                                <div class="col">
+                                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus magna
+                                        dolor, in blandit leo ullamcorper ac. Nam volutpat fermentum nulla, et pharetra
+                                        magna gravida eget. </p> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-sm-8 p-4 bg-success order-last">
+                            <!-- slick overrides any width height dimensions -->
+                            <div class="row">
+                                <div class="slider-main">
+                                    <img src="slick_img/random_1_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_2_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_3_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_4_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_5_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_6_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_7_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_8_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_9_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_10_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_11_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_12_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_13_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_14_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_15_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_16_640_480.jpg" class="img-responsive w-100" />
+                                </div>
+                            </div>
+                            <div class="row" id="texthint" style="display:block; text-align: center;">
+                                Roll over image to zoom in
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="mainTarget border">
+                    helllo
+                </div>
+                <div class="text-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Scelerisque fermentum dui faucibus in. Purus non enim praesent elementum
+                    facilisis. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant. Id aliquet lectus
+                    proin nibh nisl condimentum id venenatis a. Lorem ipsum dolor sit amet consectetur. Nulla posuere
+                    sollicitudin aliquam ultrices sagittis orci a scelerisque. Mauris pharetra et ultrices neque ornare
+                    aenean. Elementum nibh tellus molestie nunc non blandit massa. Dolor sit amet consectetur adipiscing
+                    elit duis tristique sollicitudin nibh.
+                </div>
+
+                <div class="sticky">I will stick to the screen when you reach my scroll position</div>
+                <div class="text-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Scelerisque fermentum dui faucibus in. Purus non enim praesent elementum
+                    facilisis. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant. Id aliquet lectus
+                    proin nibh nisl condimentum id venenatis a. Lorem ipsum dolor sit amet consectetur. Nulla posuere
+                    sollicitudin aliquam ultrices sagittis orci a scelerisque. Mauris pharetra et ultrices neque ornare
+                    aenean. Elementum nibh tellus molestie nunc non blandit massa. Dolor sit amet consectetur adipiscing
+                    elit duis tristique sollicitudin nibh. Et pharetra pharetra massa massa ultricies mi quis hendrerit
+                    dolor. Neque laoreet suspendisse interdum consectetur. In arcu cursus euismod quis viverra nibh
+                    cras. Est ullamcorper eget nulla facilisi etiam. Pharetra massa massa ultricies mi quis hendrerit
+                    dolor magna. Lectus nulla at volutpat diam ut. Sit amet consectetur adipiscing elit ut. Dolor morbi
+                    non arcu risus quis varius quam. Laoreet non curabitur gravida arcu.
+
+                    Neque egestas congue quisque egestas diam in arcu. Fringilla urna porttitor rhoncus dolor. Nunc mi
+                    ipsum faucibus vitae aliquet nec. Dolor sit amet consectetur adipiscing elit. Vel pharetra vel
+                    turpis nunc eget. Et odio pellentesque diam volutpat commodo sed. Tempus urna et pharetra pharetra
+                    massa. Iaculis urna id volutpat lacus laoreet non curabitur gravida. Faucibus in ornare quam viverra
+                    orci. Facilisis sed odio morbi quis commodo odio aenean sed adipiscing. Nibh ipsum consequat nisl
+                    vel pretium. Consequat interdum varius sit amet mattis vulputate enim. Ut pharetra sit amet aliquam
+                    id diam maecenas. Velit euismod in pellentesque massa placerat duis ultricies lacus sed. Massa
+                    sapien faucibus et molestie. Maecenas volutpat blandit aliquam etiam erat velit scelerisque in.
+                    Vestibulum lorem sed risus ultricies. Enim facilisis gravida neque convallis a cras semper auctor.
+
+                    Feugiat nisl pretium fusce id velit ut. Ut tellus elementum sagittis vitae et leo. Rutrum quisque
+                    non tellus orci ac auctor augue mauris augue. Ac orci phasellus egestas tellus rutrum tellus. Fames
+                    ac turpis egestas maecenas pharetra convallis posuere morbi leo. Nullam eget felis eget nunc
+                    lobortis. Blandit massa enim nec dui nunc. Sit amet luctus venenatis lectus magna fringilla urna
+                    porttitor rhoncus. Eget magna fermentum iaculis eu non. Nisl tincidunt eget nullam non nisi est.
+                    Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. Sed velit dignissim
+                    sodales ut eu. Eget aliquet nibh praesent tristique magna sit amet.
+
+                    Egestas purus viverra accumsan in nisl nisi scelerisque. Felis bibendum ut tristique et egestas quis
+                    ipsum. Dictum varius duis at consectetur lorem donec massa sapien. Mi tempus imperdiet nulla
+                    malesuada pellentesque. Eget nunc lobortis mattis aliquam faucibus. Eleifend mi in nulla posuere.
+                    Eget egestas purus viverra accumsan in nisl nisi scelerisque. Tellus id interdum velit laoreet id
+                    donec ultrices tincidunt arcu. Laoreet id donec ultrices tincidunt arcu non. Malesuada pellentesque
+                    elit eget gravida. Ut sem nulla pharetra diam. Lorem ipsum dolor sit amet consectetur adipiscing
+                    elit pellentesque habitant. Sed risus ultricies tristique nulla aliquet enim tortor. Pellentesque
+                    dignissim enim sit amet venenatis urna cursus. Ultrices neque ornare aenean euismod elementum nisi.
+                    Enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit. Est ultricies integer quis
+                    auctor. Tincidunt arcu non sodales neque sodales. Faucibus vitae aliquet nec ullamcorper sit amet
+                    risus.
+
+                    Aliquet porttitor lacus luctus accumsan tortor. Aliquam nulla facilisi cras fermentum. Varius morbi
+                    enim nunc faucibus a. Enim facilisis gravida neque convallis a cras. Ipsum suspendisse ultrices
+                    gravida dictum fusce ut placerat. Nunc id cursus metus aliquam eleifend mi in. Augue mauris augue
+                    neque gravida in fermentum et sollicitudin ac. Pellentesque nec nam aliquam sem et tortor consequat.
+                    Sed risus pretium quam vulputate dignissim suspendisse in est ante. Gravida neque convallis a cras
+                    semper auctor neque vitae tempus. Eu ultrices vitae auctor eu augue ut lectus arcu bibendum. Mauris
+                    pharetra et ultrices neque. Urna neque viverra justo nec ultrices dui sapien. Quisque egestas diam
+                    in arcu cursus euismod quis viverra. Porta nibh venenatis cras sed. Amet consectetur adipiscing elit
+                    pellentesque. Lectus nulla at volutpat diam ut venenatis tellus in metus. Mi ipsum faucibus vitae
+                    aliquet nec.
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Scelerisque fermentum dui faucibus in. Purus non enim praesent elementum
+                    facilisis. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant. Id aliquet lectus
+                    proin nibh nisl condimentum id venenatis a. Lorem ipsum dolor sit amet consectetur. Nulla posuere
+                    sollicitudin aliquam ultrices sagittis orci a scelerisque. Mauris pharetra et ultrices neque ornare
+                    aenean. Elementum nibh tellus molestie nunc non blandit massa. Dolor sit amet consectetur adipiscing
+                    elit duis tristique sollicitudin nibh. Et pharetra pharetra massa massa ultricies mi quis hendrerit
+                    dolor. Neque laoreet suspendisse interdum consectetur. In arcu cursus euismod quis viverra nibh
+                    cras. Est ullamcorper eget nulla facilisi etiam. Pharetra massa massa ultricies mi quis hendrerit
+                    dolor magna. Lectus nulla at volutpat diam ut. Sit amet consectetur adipiscing elit ut. Dolor morbi
+                    non arcu risus quis varius quam. Laoreet non curabitur gravida arcu.
+
+                    Neque egestas congue quisque egestas diam in arcu. Fringilla urna porttitor rhoncus dolor. Nunc mi
+                    ipsum faucibus vitae aliquet nec. Dolor sit amet consectetur adipiscing elit. Vel pharetra vel
+                    turpis nunc eget. Et odio pellentesque diam volutpat commodo sed. Tempus urna et pharetra pharetra
+                    massa. Iaculis urna id volutpat lacus laoreet non curabitur gravida. Faucibus in ornare quam viverra
+                    orci. Facilisis sed odio morbi quis commodo odio aenean sed adipiscing. Nibh ipsum consequat nisl
+                    vel pretium. Consequat interdum varius sit amet mattis vulputate enim. Ut pharetra sit amet aliquam
+                    id diam maecenas. Velit euismod in pellentesque massa placerat duis ultricies lacus sed. Massa
+                    sapien faucibus et molestie. Maecenas volutpat blandit aliquam etiam erat velit scelerisque in.
+                    Vestibulum lorem sed risus ultricies. Enim facilisis gravida neque convallis a cras semper auctor.
+
+                    Feugiat nisl pretium fusce id velit ut. Ut tellus elementum sagittis vitae et leo. Rutrum quisque
+                    non tellus orci ac auctor augue mauris augue. Ac orci phasellus egestas tellus rutrum tellus. Fames
+                    ac turpis egestas maecenas pharetra convallis posuere morbi leo. Nullam eget felis eget nunc
+                    lobortis. Blandit massa enim nec dui nunc. Sit amet luctus venenatis lectus magna fringilla urna
+                    porttitor rhoncus. Eget magna fermentum iaculis eu non. Nisl tincidunt eget nullam non nisi est.
+                    Cursus mattis molestie a iaculis at erat pellentesque adipiscing commodo. Sed velit dignissim
+                    sodales ut eu. Eget aliquet nibh praesent tristique magna sit amet.
+
+                    Egestas purus viverra accumsan in nisl nisi scelerisque. Felis bibendum ut tristique et egestas quis
+                    ipsum. Dictum varius duis at consectetur lorem donec massa sapien. Mi tempus imperdiet nulla
+                    malesuada pellentesque. Eget nunc lobortis mattis aliquam faucibus. Eleifend mi in nulla posuere.
+                    Eget egestas purus viverra accumsan in nisl nisi scelerisque. Tellus id interdum velit laoreet id
+                    donec ultrices tincidunt arcu. Laoreet id donec ultrices tincidunt arcu non. Malesuada pellentesque
+                    elit eget gravida. Ut sem nulla pharetra diam. Lorem ipsum dolor sit amet consectetur adipiscing
+                    elit pellentesque habitant. Sed risus ultricies tristique nulla aliquet enim tortor. Pellentesque
+                    dignissim enim sit amet venenatis urna cursus. Ultrices neque ornare aenean euismod elementum nisi.
+                    Enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit. Est ultricies integer quis
+                    auctor. Tincidunt arcu non sodales neque sodales. Faucibus vitae aliquet nec ullamcorper sit amet
+                    risus.
+
+                    Aliquet porttitor lacus luctus accumsan tortor. Aliquam nulla facilisi cras fermentum. Varius morbi
+                    enim nunc faucibus a. Enim facilisis gravida neque convallis a cras. Ipsum suspendisse ultrices
+                    gravida dictum fusce ut placerat. Nunc id cursus metus aliquam eleifend mi in. Augue mauris augue
+                    neque gravida in fermentum et sollicitudin ac. Pellentesque nec nam aliquam sem et tortor consequat.
+                    Sed risus pretium quam vulputate dignissim suspendisse in est ante. Gravida neque convallis a cras
+                    semper auctor neque vitae tempus. Eu ultrices vitae auctor eu augue ut lectus arcu bibendum. Mauris
+                    pharetra et ultrices neque. Urna neque viverra justo nec ultrices dui sapien. Quisque egestas diam
+                    in arcu cursus euismod quis viverra. Porta nibh venenatis cras sed. Amet consectetur adipiscing elit
+                    pellentesque. Lectus nulla at volutpat diam ut venenatis tellus in metus. Mi ipsum faucibus vitae
+                    aliquet nec.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mfp-hide">
+        <div id="markup">
+            <div class="mfp-figure">
+                <div class="mfp-close"></div>
+                <div class="white-popup rounded">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 p-4 bg-success">
+                                <!-- slick overrides any width height dimensions -->
+                                <div class="slider-one slider-main-popup">
+                                    <img src="slick_img/random_1_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_2_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_3_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_4_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_5_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_6_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_7_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_8_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_9_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_10_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_11_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_12_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_13_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_14_640_480.jpg" class="img-responsive w-100" />
+                                    <!-- <img src="slick_img/random_15_640_480.jpg" class="img-responsive w-100" />
+                                    <img src="slick_img/random_16_640_480.jpg" class="img-responsive w-100" /> -->
+                                </div>
+                            </div>
+                            <div class="col-md-4 p-4 bg-warning">
+                                <div class="row description">
+                                    <div class="col">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus magna
+                                            dolor, in blandit leo ullamcorper ac. Nam volutpat fermentum nulla, et
+                                            pharetra
+                                            magna gravida eget. </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <!-- slick overrides any width height dimensions -->
+                                        <div class="slider-two slider-thumbnail-popup">
+                                            <img src="slick_img/random_1_640_480.jpg" class="img-responsive w-100" />
+                                            <img src="slick_img/random_2_640_480.jpg" class="img-responsive w-100" />
+                                            <img src="slick_img/random_3_640_480.jpg" class="img-responsive w-100" />
+                                            <img src="slick_img/random_4_640_480.jpg" class="img-responsive w-100" />
+                                            <img src="slick_img/random_5_640_480.jpg" class="img-responsive w-100" />
+                                            <img src="slick_img/random_6_640_480.jpg" class="img-responsive w-100" />
+                                            <img src="slick_img/random_7_640_480.jpg" class="img-responsive w-100" />
+                                            <img src="slick_img/random_8_640_480.jpg" class="img-responsive w-100" />
+                                            <img src="slick_img/random_9_640_480.jpg" class="img-responsive w-100" />
+                                            <img src="slick_img/random_10_640_480.jpg" class="img-responsive w-100" />
+                                            <img src="slick_img/random_11_640_480.jpg" class="img-responsive w-100" />
+                                            <img src="slick_img/random_12_640_480.jpg" class="img-responsive w-100" />
+                                            <img src="slick_img/random_13_640_480.jpg" class="img-responsive w-100" />
+                                            <img src="slick_img/random_14_640_480.jpg" class="img-responsive w-100" />
+                                            <!-- <img src="slick_img/random_15_640_480.jpg" class="img-responsive w-100" />
+                                            <img src="slick_img/random_16_640_480.jpg" class="img-responsive w-100" /> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mfp-bottom-bar">
+                    <div class="mfp-title"></div>
+                    <div class="mfp-counter"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+
+    var el;
+    $(document).ready(function () {
+
+        var initialSlide = 0;
+
+        // create slick instances
+        $('.slider-main').slick({
+            infinite: false,
+            speed: 0,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            focusOnSelect: true,
+            draggable: false,
+            dots: false,
+            cssEase: 'linear',
+            rows: 1,
+            slidesPerRow: 1,
+            arrows: $(window).width() <= 576?true:false,
+        });
+
+        $('.slider-thumbnail').slick({
+            infinite: false,
+            speed: 0,
+            slidesToShow: 6,
+            slidesToScroll: 1,
+            focusOnSelect: true,
+            draggable: false,
+            centerMode: false,
+            dots: false,
+            vertical: true,
+            cssEase: 'linear',
+            rows: 1,
+            slidesPerRow: 1,
+            prevArrow: $('.slick-prev1'),
+            nextArrow: $('.slick-next1'),
+        });
+
+        // end create instances
+
+        // add data-flick-index attributes  
+        const $sliders = [$('.slider-main'), $('.slider-thumbnail')];
+        $($sliders).each(function (index, a, b, c) {
+            // console.log(index,a,b,c,this)
+            $(this).each(function (a, b, c) {
+                this.slick['$slideTrack']
+                    .children().children().children()
+                    .each(function (index) {
+                        this.setAttribute('data-flick-index', index)
+                    })
+
+            })
+        });
+        // end add attrib
+
+        // get attrib and trigger main slider change on thumbnail trigger
+
+        $('.slider-thumbnail').each(function () {
+            var _ = this;
+            // console.log('....1', _)
+            // change main slide when hover over thumbnail
+            _.slick['$slideTrack'].children().on('mouseover.slick', function () {
+                console.log('click');
+                // console.log(event);
+
+                var index = event.target.closest('[data-flick-index]') != null ? parseInt(event.target.closest('[data-flick-index]').getAttribute('data-flick-index')) : 0;
+                console.log(index);
+                _.slick['gridIndex'] = index;
+                $(_).trigger('afterChange2a', [index]);
+            });
+        });
+
+        $('.slider-thumbnail').on('afterChange2a', function (event, index) {
+            $(this).find('[data-flick-index]').removeClass('flick-current');
+            $(this).find('[data-flick-index]').eq(index).addClass('flick-current');
+            // change main slider after selecting thumbnail slider
+            $('.slider-main').slick('slideHandler', index, false, false)
+            console.log('afterChanges', index)
+            initialSlide = index;
+
+
+        });
+
+        // end get attrib
+
+        // responsive slick option on screen/windows resize/orientation?? responsive is destructive with windows drag to resize
+
+        $(window).on('resize', function () {
+            console.log('resize');
+
+            // Returns width of browser viewport
+            console.log($(window).width());
+
+            // Returns width of HTML document
+            console.log($(document).width());
+            if ($(window).width() <= 576) {
+                console.log('smaller than 576');
+                console.log('hide', $('.slider-thumbnail').siblings());
+                $('.slider-thumbnail').siblings().hide();
+                $('.slider-main').slick("slickSetOption", 'arrows', true, true )
+
+            } else {
+                console.log('show', $('.slider-thumbnail').siblings());
+                $('.slider-thumbnail').siblings().show();
+                $('.slider-main').slick("slickSetOption", 'arrows', false, true )
+            }
+        })
+        // end responsive
+
+        // find current slide of main and passed to popup for responsive < 576
+        $('.slider-main').each(function(){
+            let _ = this;
+            _.slick['$slideTrack'].children().on('mouseover.slick', function () {
+                let _ = this, index = $(_).data('slick-index');
+                initialSlide = index;
+            })
+        })
+        //
+
+        // zoom
+
+        $('.slider-main').find('img').not('.zoomImg')
+            .wrap('<span style="display:inline-block"></span>')
+            .css('display', 'block')
+            .parent()
+            // .zoom({ magnify: 2 })
+            .zoom({
+                duration: 500,
+                magnify: 2, target: $('.mainTarget'),
+
+            });
+
+        // end zoom
+
+        $('.slider-main').on('mouseover', function () {
+            $("#texthint").text('Click image to open expanded view');
+        }).on('mouseleave', function () {
+            $("#texthint").text('Roll over image to zoom in');
+        })
+
+        // magnific-popup sliders
+
+        let slider_one_opt = {
+            infinite: false,
+            speed: 0,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            focusOnSelect: false,
+            draggable: false,
+            // centerMode: true,
+            // fade: true,
+            dots: false,
+            // variableWidth: true,
+            // vertical: true,
+            cssEase: 'linear',
+            rows: 1,
+            slidesPerRow: 1,
+            initialSlide: initialSlide,
+        },
+
+            slider_two_opt = {
+                infinite: false,
+                speed: 0,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                focusOnSelect: true,
+                draggable: false,
+                centerMode: false,   // need this so that slick-current updated on this slider
+                // fade: true,
+                dots: true,
+                // variableWidth: true,
+                // vertical: true,
+                cssEase: 'linear',
+                rows: 4,
+                slidesPerRow: 1,
+                initialSlide: initialSlide,
+            },
+
+            sliders_opt = [slider_one_opt, slider_two_opt];
+
+        // image must load first before magnificPopup opens i.e. slick must not be initialized earlier but within magnificPopup in the open callback
+        // next, link thumbnail and main display sliders
+        // $('#click').magnificPopup({
+        $('.slider-main .slick-slide').magnificPopup({
+            closeOnContentClick: false,
+            key: 'mymarkup',
+            type: 'inline',
+            inline: {
+                markup: '#markup',
+                cursor: 'mfp-zoom-out-cur',
+                titleSrc: 'title',
+                // verticalFit: true,
+                tError: '<a href="%url%">The image</a> could not be loaded.'
+            },
+            callbacks: {
+                // open: function () {
+                open: function () {
+                    console.log('open...initialSlide', initialSlide);
+
+                    slider_one_opt.initialSlide = initialSlide;
+                    // slider_two_opt.initialSlide = initialSlide;
+
+                    const $sliders = [$('.slider-one'), $('.slider-two')];
+                    $($sliders).each(function (index) {
+                        if (!this.hasClass('slick-initialized')) {
+                            $(this).slick(sliders_opt[index])
+                        } else {
+                            console.log('has class');
+                        }
+                    });
+
+                    $($sliders).each(function (index, a, b, c) {
+                        // console.log(index,a,b,c,this)
+                        $(this).each(function (a, b, c) {
+                            this.slick['$slideTrack']
+                                .children().children().children()
+                                .each(function (index) {
+                                    this.setAttribute('data-flick-index', index)
+                                })
+
+                        })
+                    });
+                    // ensure that popup thumbnail points to the same main thumbnail
+                    $('.slider-thumbnail-popup').find('.slick-slide').removeClass('slick-current');
+                    $('.slider-thumbnail-popup').find('[data-flick-index]').removeClass('flick-current');
+                    console.log($('.slider-thumbnail-popup').find('[data-flick-index]'))
+                    let slickIndex = $('.slider-thumbnail').find('.slick-current').data('slick-index');
+                    console.log('slickIndex', slickIndex);
+                    $('.slider-thumbnail-popup').find('[data-slick-index]').eq(slickIndex).addClass('slick-current');
+                    let flickIndex = $('.slider-thumbnail').find('.flick-current').data('flick-index');
+                    console.log('flickIndex', flickIndex);
+                    console.log($('.slider-thumbnail-popup').find('[data-flick-index]'));
+                    $('.slider-thumbnail-popup').find('[data-flick-index]').eq(flickIndex).addClass('flick-current');
+
+                    $('.slider-thumbnail-popup').each(function () {
+                        var _ = this;
+                        console.log('....1', _)
+                        _.slick['$slideTrack'].children().on('click.slick', function () {
+                            console.log('click');
+                            // console.log(event);
+                            var index = parseInt(event.target.closest('[data-flick-index]').getAttribute('data-flick-index'));
+                            _.slick['gridIndex'] = index;
+                            $(_).trigger('afterChange2', [index]);
+                        });
+
+                        // add border when hover over thumbnail
+                        _.slick['$slideTrack'].children().children()
+                            .on('mouseover.slick', function () {
+                                $(event.target).addClass('addBorder');
+                            }).on('mouseleave', function () {
+                                $(event.target).removeClass('addBorder');
+
+
+                            });
+                    });
+
+                    $('.slider-thumbnail-popup').on('afterChange2', function (event, index) {
+                        $(this).find('[data-flick-index]').removeClass('flick-current');
+                        $(this).find('[data-flick-index]').eq(index).addClass('flick-current');
+
+                        $('.slider-main-popup').slick('slideHandler', index, false, false)
+                        console.log('afterChanges', index)
+
+                    });
+
+                    // zoom
+                    $('.slider-main-popup').find('img').not('.zoomImg')
+                        .wrap('<span style="display:inline-block"></span>')
+                        .css('display', 'block')
+                        .parent()
+                        .zoom({ on: 'click', magnify: 2, onZoomIn: onZoomIn, onZoomOut: onZoomOut });
+
+                    function onZoomIn() {
+                        console.log('onZoomIn');
+                        $(this).css('cursor', 'zoom-out');
+                    }
+
+                    function onZoomOut() {
+                        console.log('onZoomOut');
+                        $(this).css('cursor', 'zoom-in');
+                    }
+                    // end zoom
+
+                },
+                close: function () {
+
+                    // // zoom
+                    $('.slider-main-popup').find('img').parent().each(function () {
+                        if ($(this).is('span')) {
+                            $(this).trigger('zoom.destroy');
+                            console.log('zoom.destroy');
+                        }
+                    });
+                    $('.slider-main-popup').find('img').unwrap('span');
+                    // end zoom
+
+                    const $sliders = [$('.slider-one'), $('.slider-two')];
+                    // $('.slider-one').slick('unslick');
+                    // $('.slider-two').slick('unslick');
+                    $($sliders).each(function (index) {
+                        $(this).slick('unslick');
+                    })
+
+                },
+            }
+        })
+
+
+    });
+</script>
+
+</html>

@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Slick Playground I</title>
-  <meta charset="UTF-8">
-  <!-- <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+  <!-- <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="./slick/slick.css">
   <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css"> -->
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" />
@@ -86,19 +86,66 @@ h4 {
 }
 
 .grid-container {
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(4, auto);
+}
+
+.slick-container {
+  /* display: grid !important; */
+  /* grid-template-columns: repeat(4, auto); */
+  width: 80%;
+  margin: 0 auto;
+}
+
+.slick-grid-container {
+  /* display: grid !important; */
+  /* grid-template-columns: repeat(4, auto); */
+  width: 100%;
+  margin: 0 auto;
 }
 
 .slider-wrapper {
     width: 80%;
     background-color: aqua;
+    margin: 0 auto;
 }
 
-.slider-grid {
+/* .slider-grid {
     width: 100%;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+} */
+
+/* .slider-grid .slick-list {
+  display: grid; width: 100%;
+} */
+/* .slider-grid .slick-track {
+  display: grid; width: 100% !important ;
+  grid-template-columns: repeat(4, auto);
+} */
+
+.slider-grid .slick-track::before, .slider-grid .slick-track::after {
+  content: none;
 }
 
+.slider-grid .slick-current {
+  background-color: rgb(6, 73, 70);
+}
+
+.slider-grid .slick-current h3{
+  background-color: rgb(98, 250, 242);
+}
+
+.slide-extra h3 {
+    background: rgb(223, 97, 97);
+    color: #3498db;
+    font-size: 36px;
+    line-height: 100px;
+    margin: 10px;
+    padding: 2%;
+    position: relative;
+    text-align: center;
+}
 /* .slide-item {
 	background-color: rebeccapurple;
 	color: aqua;
@@ -111,19 +158,90 @@ h4 {
 } */
 
 .slider-info .slick-current {
-  background-color: rgb(198, 120, 236);
+  /* background-color: rgb(198, 120, 236); */
+}
+
+
+.slick-container .slick-track:before,
+.slick-container .slick-track:after
+{
+    display: '';
+
+    content: unset;
+}
+
+.slider-info .flick-current {
+  background-color: rgb(175, 57, 126);
 }
 
  </style>
+
+
+<style>
+  .ref {
+      width:400px;
+      height:100px;
+      position:absolute;
+      top:0px;
+      left:0px;
+      background-color:blueviolet;
+      display: block;
+      z-index: 10;
+      opacity:0.2;
+  }
+
+  .ref h2 {
+    text-align: center;
+  }
+</style>
+
 </head>
 <body>
+
+  <!-- <div class="ref"><h2>ref</h2></div> -->
+
     <div class="main">
         <div class="slider slider-main">
           <div><h3>1</h3></div>
           <div><h3>2</h3></div>
           <div><h3>3</h3></div>
           <div><h3>4</h3></div>
-          <div><h3>5</h3></div>       
+          <div><h3>5</h3></div> 
+          <div><h3>6</h3></div>
+          <div><h3>7</h3></div>
+          <div><h3>8</h3></div>
+          <div><h3>9</h3></div>
+          <div><h3>10</h3></div>   
+          <div><h3>11</h3></div>
+          <div><h3>12</h3></div>
+          <div><h3>13</h3></div>
+          <div><h3>14</h3></div>
+          <div><h3>15</h3></div> 
+          <div><h3>16</h3></div>
+          <div><h3>17</h3></div>
+          <div><h3>18</h3></div>
+          <div><h3>19</h3></div>
+          <div><h3>20</h3></div>    
+          <div><h3>21</h3></div>
+          <div><h3>22</h3></div>
+          <div><h3>23</h3></div>
+          <div><h3>24</h3></div>
+          <div><h3>25</h3></div> 
+          <div><h3>26</h3></div>
+          <div><h3>27</h3></div>
+          <div><h3>28</h3></div>
+          <div><h3>29</h3></div>
+          <div><h3>30</h3></div>   
+          <div><h3>31</h3></div>
+          <div><h3>32</h3></div>
+          <div><h3>33</h3></div>
+          <div><h3>34</h3></div>
+          <div><h3>35</h3></div> 
+          <div><h3>36</h3></div>
+          <div><h3>37</h3></div>
+          <div><h3>38</h3></div>
+          <div><h3>39</h3></div>
+          <div><h3>40</h3></div>         
         </div>
         <div class="slider slider-info">
           <div><h3>1</h3></div>
@@ -131,6 +249,41 @@ h4 {
           <div><h3>3</h3></div>
           <div><h3>4</h3></div>
           <div><h3>5</h3></div>
+          <div><h3>6</h3></div>
+          <div><h3>7</h3></div>
+          <div><h3>8</h3></div>
+          <div><h3>9</h3></div>
+          <div><h3>10</h3></div>   
+          <div><h3>11</h3></div>
+          <div><h3>12</h3></div>
+          <div><h3>13</h3></div>
+          <div><h3>14</h3></div>
+          <div><h3>15</h3></div> 
+          <div><h3>16</h3></div>
+          <div><h3>17</h3></div>
+          <div><h3>18</h3></div>
+          <div><h3>19</h3></div>
+          <div><h3>20</h3></div>    
+          <div><h3>21</h3></div>
+          <div><h3>22</h3></div>
+          <div><h3>23</h3></div>
+          <div><h3>24</h3></div>
+          <div><h3>25</h3></div> 
+          <div><h3>26</h3></div>
+          <div><h3>27</h3></div>
+          <div><h3>28</h3></div>
+          <div><h3>29</h3></div>
+          <div><h3>30</h3></div>   
+          <div><h3>31</h3></div>
+          <div><h3>32</h3></div>
+          <div><h3>33</h3></div>
+          <div><h3>34</h3></div>
+          <div><h3>35</h3></div> 
+          <div><h3>36</h3></div>
+          <div><h3>37</h3></div>
+          <div><h3>38</h3></div>
+          <div><h3>39</h3></div>
+          <div><h3>40</h3></div>  
         </div>
       
         <div class="buttons">
@@ -142,9 +295,15 @@ h4 {
     </div>
 
       <div style="clear:both;"></div>
-      <h4>Slider</h4>
+
+      <!-- <h4>Slider Main</h4>
       <div class="slider-wrapper">
-        <div class="slider slider-grid">
+        <div id="slider-grid-main" class="slider slider-grid-main">
+          <div class="slide-extra slide-item"><h3>1</h3></div>
+          <div class="slide-extra slide-item"><h3>2</h3></div>
+          <div class="slide-extra slide-item"><h3>3</h3></div>
+          <div class="slide-extra slide-item"><h3>4</h3></div>
+          <div class="slide-extra slide-item"><h3>5</h3></div>
           <div class="slide-extra slide-item"><h3>6</h3></div>
           <div class="slide-extra slide-item"><h3>7</h3></div>
           <div class="slide-extra slide-item"><h3>8</h3></div>
@@ -153,9 +312,170 @@ h4 {
           <div class="slide-extra slide-item"><h3>11</h3></div>
         </div>
       </div>
-      <div style="clear:both;"></div>
+
+      <h4>Slider</h4>
+      <div class="slider-wrapper">
+        <div id="slider-grid-0" class="slider slider-grid">
+          <div class="slide-extra slide-item"><h3>1</h3></div>
+          <div class="slide-extra slide-item"><h3>2</h3></div>
+          <div class="slide-extra slide-item"><h3>3</h3></div>
+          <div class="slide-extra slide-item"><h3>4</h3></div>
+          <div class="slide-extra slide-item"><h3>5</h3></div>
+          <div class="slide-extra slide-item"><h3>6</h3></div>
+          <div class="slide-extra slide-item"><h3>7</h3></div>
+          <div class="slide-extra slide-item"><h3>8</h3></div>
+          <div class="slide-extra slide-item"><h3>9</h3></div>
+          <div class="slide-extra slide-item"><h3>10</h3></div>
+          <div class="slide-extra slide-item"><h3>11</h3></div>
+        </div>
+      </div>
+      <div style="clear:both;"></div> -->
+
+      <style>
+        .flick-slide {
+          display: inline-block !important;
+        }
+      </style>
       <h4>Grid container</h4>
-      <div class="grid-container">
+      <!-- <div class="slick-container">
+        <div class="slick-grid-container">
+          <div class="slide-extra slide-item"><h3>1</h3></div>
+          <div class="slide-extra slide-item"><h3>2</h3></div>
+          <div class="slide-extra slide-item"><h3>3</h3></div>
+          <div class="slide-extra slide-item"><h3>4</h3></div>
+          <div class="slide-extra slide-item"><h3>5</h3></div>
+          <div class="slide-extra slide-item"><h3>6</h3></div>
+          <div class="slide-extra slide-item"><h3>7</h3></div>
+          <div class="slide-extra slide-item"><h3>8</h3></div>
+          <div class="slide-extra slide-item"><h3>9</h3></div>
+          <div class="slide-extra slide-item"><h3>10</h3></div>
+          <div class="slide-extra slide-item"><h3>11</h3></div>
+        </div>
+      </div>
+      <div class='grid-container-arrows'></div>
+      <div class="main-slick-grid-container">
+        <div class="slide-extra slide-item"><h3>1</h3></div>
+        <div class="slide-extra slide-item"><h3>2</h3></div>
+        <div class="slide-extra slide-item"><h3>3</h3></div>
+        <div class="slide-extra slide-item"><h3>4</h3></div>
+        <div class="slide-extra slide-item"><h3>5</h3></div>
+        <div class="slide-extra slide-item"><h3>6</h3></div>
+        <div class="slide-extra slide-item"><h3>7</h3></div>
+        <div class="slide-extra slide-item"><h3>8</h3></div>
+        <div class="slide-extra slide-item"><h3>9</h3></div>
+        <div class="slide-extra slide-item"><h3>10</h3></div>
+        <div class="slide-extra slide-item"><h3>11</h3></div>
+      </div> -->
+      <!-- <div class='main-grid-container-arrows'></div> -->
+      <style>
+        .grid-container-arrows {
+          background-color: yellow;
+          /* width: 100%;
+          height: 50px;
+          margin: 0px auto; */
+        }
+        .main-grid-container-arrows {
+          background-color: rgb(68, 175, 122);
+          /* width: 100%;
+          height: 50px;
+          margin: 0px auto; */
+        }
+        .slick-prev:before,
+            .slick-next:before {
+              color: black;
+            }
+
+        .slick-prev2 {
+            font-family: FontAwesome;
+            content: "\f0d9";
+            font-size: 22px;
+        }  
+        .slick-next2 {
+            font-family: FontAwesome;
+            content:  "\f0da";
+            font-size: 22px;        
+        } 
+
+        .slick-next2, .slick-prev2 {
+          display: inline-block;
+          width: 38px;
+          height: 38px;
+          margin-top: 6px;
+          background: #2b2b2b;
+          color: #FFF;
+          margin-left: 5px;
+          cursor: pointer;
+          font: 18px/36px FontAwesome;
+          text-align: center;
+          transition: all 0.5s;
+        }
+
+
+        .slick-next2:hover, .slick-prev2:hover {
+          background: #33687a;
+        }
+
+        .slick-next2:before {
+          content: '\f105'
+        }
+
+        .slick-prev2:before {
+          content: '\f104'
+        }
+      </style>
+
+
+      <div style="clear:both;"></div>
+      <h4>2nd slider-grid</h4>
+
+      <!-- <div class="slider slider-grid">
+        <div class="slide-extra slide-item"><h3>1</h3></div>
+        <div class="slide-extra slide-item"><h3>2</h3></div>
+      </div> -->
+
+      <style>
+        .c1Class {
+          border: 1px solid rgb(124, 124, 223);
+          /* with this display: inline-block, next element flows with it. without this, next element laid out on next line */
+          /* in slick.js, display: block and arrows flank the sides.... */
+          display: inline-block;
+          /* display: block; float: left; */
+        }
+        .c2Class {
+          border: 1px solid red;
+          background-color: rgb(70, 70, 170);
+          padding: 2px;
+          margin: 2px;
+          display:inline-block;
+        }
+        .c3Class {
+          background-color: rgb(153, 139, 167);
+        }
+      </style>
+
+
+      <img class="c3Class" src="http://placehold.it/150x100?text=7">
+      <img class="c3Class" src="http://placehold.it/150x100?text=8">
+      <img class="c3Class" src="http://placehold.it/150x100?text=9">
+      <div style="background-color: chartreuse; display: inline-block; padding: 2px; margin: 2px;">
+        <img class="" style="border:1px solid brown" src="http://placehold.it/150x100?text=10">
+      </div>
+      
+<style>
+.grid-container-2 {
+  display: grid !important;
+  grid-template-columns: repeat(4, auto);
+}
+
+</style>
+
+    <!-- <div class="grid-container-2-1">
+      <div class="grid-container-2">
+        <div class="slide-extra slide-item"><h3>1</h3></div>
+        <div class="slide-extra slide-item"><h3>2</h3></div>
+        <div class="slide-extra slide-item"><h3>3</h3></div>
+        <div class="slide-extra slide-item"><h3>4</h3></div>
+        <div class="slide-extra slide-item"><h3>5</h3></div>
         <div class="slide-extra slide-item"><h3>6</h3></div>
         <div class="slide-extra slide-item"><h3>7</h3></div>
         <div class="slide-extra slide-item"><h3>8</h3></div>
@@ -163,19 +483,34 @@ h4 {
         <div class="slide-extra slide-item"><h3>10</h3></div>
         <div class="slide-extra slide-item"><h3>11</h3></div>
       </div>
-      
+    </div> -->
 
   <!-- <button id='click'>click me</button> -->
 
   <!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
   <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous"></script> -->
+  <!-- <script src="scripts/myslick2.js"></script> -->
+  <!-- <script src="scripts/myslick2_2.js"></script> -->
 
+  <script src="slick/slick_customflick.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js" integrity="sha512-C1zvdb9R55RAkl6xCLTPt+Wmcz6s+ccOvcr6G57lbm8M2fbgn2SUjUJbQ13fEyjuLViwe97uJvwa1EUf4F1Akw==" crossorigin="anonymous" ></script>
 
   <script type="text/javascript" src="scripts/Event.js"></script>
   <script type="text/javascript" src="scripts/Magnifier.js"></script>
+
+  <script>
+    $(function(){
+      (function($){
+        $('.c3Class').wrap('<div class="c2Class"></div>');
+        $('.c2Class').wrapAll('<div class="c1Class"></div>');
+        console.log("cClass....");
+        console.log($('.c1Class').width(),$('.c2Class').width(),$('.c3Class').width(),);
+      })(jQuery);
+    });
+  </script>
+
 
   <script>
 
@@ -188,8 +523,10 @@ h4 {
           focusOnSelect: true,
           draggable: true,
           centerMode: true,
+          fade: true,
         });        
-        $('.slider-info').slick({
+        // disable asNavFor
+        let p= $('.slider-info').slick({
           infinite: false,
           speed: 200,
           slidesToShow: 5,
@@ -197,57 +534,289 @@ h4 {
           focusOnSelect: true,
           draggable: true,
           centerMode: true,
-          asNavFor: '.slider-main',
-          rows: 2,
+          // asNavFor: '.slider-main',
+          rows: 4,
+          // myindex: "5"
           // slidesPerRow: 2,
         });
-        var slideIndex = 5;
-        $('.js-add-slide').on('click', function() {
-          slideIndex++;
-          $('.slider-info').slick('slickAdd','<div><h3>' + slideIndex + '</h3></div>');
+
+
+        $('.slider-info').slick('slickGetOption','myindex')
+
+        // // let p = $('.slider-info').slick();
+        // let c = Object.getPrototypeOf(p["slick"]).constructor
+        // let Flink = c;
+        // Flink.prototype.flirt = function(){console.log("hey dude")}
+
+        // $('slick-info').slick('flirt');
+
+        // $('.slider-info').on('afterChange', function(event, a, b, c){
+        //   // console.log('beforeChange');
+        //   // console.log(event);
+        //   // console.log(a,b,c);
+        //   // console.log('currentSlide',$(this).slick('slickGetOption'),'currentSlide');
+        //   // console.log($(this).slick('slickCurrentSlide'));
+        //   // console.dir($(this).find('[data-flick-index]'));
+        //   // this.slick['asNavFor'].apply(this.slick,); //asNavFor(this.myindex);
+        //   // console.log('myindex....4',$('.slider-info').myindex);
+        //   // let findex = parseInt($('.slider-info').slick('slickGetOption','myindex'));
+        //   // console.log('myindex....1',findex);
+        //   $(this).slick('asNavFor',$('.slider-info')[0].slick['myindex']);
+
+
+        //   // findex = parseInt($('.slider-info').slick('slickGetOption','myindex'));
+        //   // console.log('myindex....2',findex);
+        //   // console.log($('.slider-info').currentSlide);
+        //   // console.log($('.slider-info')[0].slick['myindex']);
+        //   // console.log(typeof($('.slider-info')[0].slick['myindex']));
+
+        // })
+
+        // $('.slider-info').on('beforeChange', function(event, a, b, c){
+        //   console.log('myindex....4',$('.slider-info')[0].slick['myindex']);
+        //   console.log(a,b,c);
+        //   var i = $('.slider-info')[0].slick['myindex'];
+        //   $(this).find('[data-flick-index]').removeClass('flick-current');
+        //   $(this).find('[data-flick-index]').eq(i).addClass('flick-current');
+        //   console.log('afterChange',$('.slider-main').slick('getSlick').currentSlide)
+        //   // let index = $('.slider-main').slick('getSlick').currentSlide;
+        //   // $('.slider-main').slick('selectHandler2', { data: {
+        //   //       message: 'index',
+        //   //       index: parseInt(index)
+        //   //   }})
+
+        //   let index = $('.slider-main').slick('getSlick').currentSlide;
+        //   $('.slider-main').slick('slideHandler', index, false, false)
+
+        // })      
+       
+        $('.slider-info')[0].slick['$slideTrack'].children().children().children().each(function(i){this.setAttribute('data-flick-index',i)})
+
+        $('.slider-info').each(function(){
+          var _ = this;
+          _.slick['$slideTrack'].children().on('click.slick', function(){
+            console.log('click');
+
+            var index = parseInt(event.target.closest('[data-flick-index]').getAttribute('data-flick-index'));
+            _.slick['gridIndex'] = index;
+
+            $(_).trigger('afterChange2', [index]);
+          });
         });
-        $('.js-add-slide-extra').on('click', function() {
-          $('.slide-extra').each(function(){
-              console.log($(this).prop('outerHTML'));
-              slideIndex++;
-              $('.slider-info').slick('slickAdd',$(this).prop('outerHTML'));
-          })
-          // slideIndex++;
-          // $('.slider-info').slick('slickAdd',$('.slide-extra').html());
-        });
-        $('.js-remove-slide').on('click', function() {
-          $('.slider-info').slick('slickRemove',slideIndex - 1);
-          if (slideIndex !== 0){
-              slideIndex--;
-          }
+
+        // $('.slider-info').on('beforeChange', function(event, a, b, c){
+        //   console.log(event, a,b,c)
+        //   // _.myindex = parseInt(event.target.closest('[data-flick-index]').getAttribute('data-flick-index'));
+        //   // var j = parseInt(event.target.closest('[data-flick-index]').getAttribute('data-flick-index'));
+        //   // console.log('j',j)
+        // });  
+
+        $('.slider-info').on('afterChange2', function(event, index){
+
+          $(this).find('[data-flick-index]').removeClass('flick-current');
+
+          $(this).find('[data-flick-index]').eq(index).addClass('flick-current');
+
+          $('.slider-main').slick('slideHandler', index, false, false)
+
+        });  
+
+        // var slideIndex = 5;
+        // $('.js-add-slide').on('click', function() {
+        //   slideIndex++;
+        //   $('.slider-info').slick('slickAdd','<div><h3>' + slideIndex + '</h3></div>');
+        // });
+        // $('.js-add-slide-extra').on('click', function() {
+        //   $('.slide-extra').each(function(){
+        //       console.log($(this).prop('outerHTML'));
+        //       slideIndex++;
+        //       $('.slider-info').slick('slickAdd',$(this).prop('outerHTML'));
+        //   })
+        //   // slideIndex++;
+        //   // $('.slider-info').slick('slickAdd',$('.slide-extra').html());
+        // });
+        // $('.js-remove-slide').on('click', function() {
+        //   $('.slider-info').slick('slickRemove',slideIndex - 1);
+        //   if (slideIndex !== 0){
+        //       slideIndex--;
+        //   }
+        // });
+
+        $('.slider-grid-main').slick({
+            dots: true,
+            // slidesToShow: 6,
+            rows: 1,
+            // slidesPerRow:1,
+            focusOnSelect: true,
+            infinite: false,
+            // asNavFor: '#slider-grid-main',
         });
 
         $('.slider-grid').slick({
             dots: true,
-            slidesToShow: 2,
-            rows: 2,
+            // slidesToShow: 6,
+            rows: 3,
             slidesPerRow:2,
             focusOnSelect: true,
+            infinite: false,
+            asNavFor: '#slider-grid-main',
         });
         // $('.slider-grid').slick('slickRemove',0);
-        $('.js-add-slide-extra-2').on('click', function() {
-            $('.slide-extra').each(function(){
-                console.log($(this).prop('outerHTML'));
-                slideIndex++;
-                $('.slider-grid').slick('slickAdd',$(this).prop('outerHTML'));
-            })
-        // slideIndex++;
-        // $('.slider-info').slick('slickAdd',$('.slide-extra').html());
-        });
+        // $('.js-add-slide-extra-2').on('click', function() {
 
-        // $('.slide-extra').each(function(){
-        //         console.log($(this).prop('outerHTML'));
+        //     $('.slider-grid').doSomething();
+
+        //     $('.slide-extra').each(function(){
+        //         // console.log($(this).prop('outerHTML'));
         //         slideIndex++;
         //         $('.slider-grid').slick('slickAdd',$(this).prop('outerHTML'));
-        // })
-})
-  </script>
- 
+        //     })
+        // // slideIndex++;
+        // // $('.slider-info').slick('slickAdd',$('.slide-extra').html());
+        // });
 
+        // $('.slide-extra').each(function(){
+        //         // console.log($(this).prop('outerHTML'));
+        //         // slideIndex++;
+        //         // $('.slider-grid').slick('slickAdd',$(this).prop('outerHTML'));
+        // })
+
+        // $('.slider-grid').doSomething();
+
+        $('.slick-container').slick({
+          dots: true,
+          infinite: false, // by default, true, required for grid
+          slidesToShow: 4,
+          arrows: false,
+          appendArrows: $('.grid-container-arrows'),
+          prevArrow:'<span class="slick-prev2"></span>',
+          nextArrow:'<span class="slick-next2"></span>',
+          asNavFor: '.main-slick-grid-container',
+          focusOnSelect: true,  // required for grid
+          dontAnimate: true,
+          swipe: false,
+          // fade: false,
+        })
+
+        $('.main-slick-grid-container').slick({
+          dots: true,
+          infinite: false,slidesToShow: 1,
+          appendArrows: $('.main-grid-container-arrows'),
+          prevArrow:'<span class="slick-prev2"></span>',
+          nextArrow:'<span class="slick-next2"></span>',
+          focusOnSelect: true,
+          fade: true,
+        })
+
+        $('[data-flick-index]').on('click', function(index, element){
+          console.log("flick", $(this).data('flick-index'));
+        })
+});
+
+;(function($){
+  $.fn.doSomething = function() {
+    // $(function(){
+      var obj = { name: 'myObj'};
+      console.log('this.slideToShow = ' + JSON.stringify(obj));
+      console.log(this[0].slick);
+      this.slick.$dots = null;
+    // });
+  }
+}(jQuery));
+
+;(function($){
+  // $.fn.selectHandler = function(event) {
+
+  //       console.log("hi");
+  //       var _ = this;
+
+  //       var targetElement =
+  //           $(event.target).is('.slick-slide') ?
+  //               $(event.target) :
+  //               $(event.target).parents('.slick-slide');
+
+  //       var index = parseInt(targetElement.attr('data-slick-index'));
+
+  //       if (!index) index = 0;
+
+  //       if (_.slideCount <= _.options.slidesToShow) {
+
+  //           _.slideHandler(index, false, true);
+  //           return;
+
+  //       }
+
+  //       _.slideHandler(index);
+  // }
+
+
+  $.fn.slick.getCurrent = $.fn.slick.slickCurrentSlide = function() {
+
+        var _ = this;
+        console.log("_");
+        console.dir(_);
+        console.log("slickCurrentSlide22",' myslick.js',_,_.currentSlide);
+        return _.currentSlide;
+
+  };
+
+
+  $.fn.slick.selectHandler2 = function(event) {
+console.log('$.fn.slick.selectHandler2')
+    var _ = this;
+
+    var targetElement =
+        $(event.target).is('.slick-slide') ?
+            $(event.target) :
+            $(event.target).parents('.slick-slide');
+
+    var index = parseInt(targetElement.attr('data-slick-index'));
+
+    if (!index) index = 0;
+
+    if (_.slideCount <= _.options.slidesToShow) {
+    console.log('qwerty');
+        _.slideHandler(index, false, true);
+        return;
+
+    }
+
+    console.log('zxcvb');
+    _.slideHandler(index, false, false);
+
+  };
+
+
+}(jQuery));
+
+  </script>
+ <style>
+   .yourClass, .myClass {
+     background-color: rgb(121, 28, 85);
+     border: 5px solid rebeccapurple;
+     }
+ </style>
+ <script>
+// ;(function($){
+//   $.fn.doSomething = function(){
+//     console.log("doSomething...");
+//     console.dir(this);
+//   }
+  
+// })(jQuery);
+// $('.slider-grid').doSomething();
+// $.fn.doSomething.saySomething = function() {
+//   console.log("saySomething...");
+//   console.dir(this);
+// }
+// $('.slider-grid').doSomething.saySomething();
+ </script>
+<script>
+$.fn.slick.doSomething = function() {
+  console.dir(this);
+  console.log("success????");
+}
+
+</script>
 </body>
 </html>
